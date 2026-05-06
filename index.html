@@ -233,89 +233,135 @@
       <p class="font-body-md text-body-md text-on-surface-variant">A curated selection of brands built, grown, and transformed.</p>
     </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter" id="work-grid">
 
     <!-- FreshNest -->
-    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
-      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/freshnest/1.png');"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
-      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">CLEANING</span>
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">BRAND BUILD</span>
+    <button type="button" class="case-card glass-card group rounded-xl overflow-hidden flex flex-col text-left reveal" data-case="freshnest">
+      <div class="relative h-64 md:h-72 overflow-hidden bg-surface-container-low">
+        <img src="assets/freshnest/1.png" alt="FreshNest Cleaning hero" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"/>
+        <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
+        <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">CLEANING</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">BRAND BUILD</span>
         </div>
-        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">FreshNest Cleaning</h3>
-        <p class="font-body-md text-body-md text-white/80">Full brand build — logo, colour system, and a complete social content suite for a residential cleaning service.</p>
-        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">+272%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">FOLLOWERS</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">6.2%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">9</div><div class="font-label-caps text-label-caps text-white/60 mt-1">BOOKINGS/MO</div></div>
+        <span class="absolute top-4 right-4 font-label-caps text-label-caps px-3 py-1 rounded-full bg-secondary-container/80 text-white border border-secondary/40 inline-flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">collections</span>6 PHOTOS
+        </span>
+      </div>
+      <div class="p-6 md:p-8 flex-1 flex flex-col">
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2">FreshNest Cleaning</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant flex-1">Full brand build — logo, colour system, and a complete social content suite for a residential cleaning service.</p>
+        <div class="flex gap-6 mt-6 pt-6 border-t border-white/10">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">+272%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">FOLLOWERS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">6.2%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">ENGAGEMENT</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">9</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">BOOKINGS/MO</div></div>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 font-label-caps text-label-caps text-secondary group-hover:text-tertiary transition-colors">
+          VIEW GALLERY <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </div>
       </div>
-    </div>
+    </button>
 
     <!-- Sparkle Clean -->
-    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
-      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/sparkle-clean/2.png');"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
-      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">PREMIUM</span>
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">POSITIONING</span>
+    <button type="button" class="case-card glass-card group rounded-xl overflow-hidden flex flex-col text-left reveal" data-case="sparkle">
+      <div class="relative h-64 md:h-72 overflow-hidden bg-surface-container-low">
+        <img src="assets/sparkle-clean/2.png" alt="Sparkle Clean hero" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"/>
+        <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
+        <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">PREMIUM</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">POSITIONING</span>
         </div>
-        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">Sparkle Clean Co.</h3>
-        <p class="font-body-md text-body-md text-white/80">Editorial, magazine-style content for a high-end exterior cleaning brand. Tips carousels &amp; social proof systems.</p>
-        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">340%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">PROFILE VISITS</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">$4.2k</div><div class="font-label-caps text-label-caps text-white/60 mt-1">CONTRACT</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">4.8%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+        <span class="absolute top-4 right-4 font-label-caps text-label-caps px-3 py-1 rounded-full bg-secondary-container/80 text-white border border-secondary/40 inline-flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">collections</span>6 PHOTOS
+        </span>
+      </div>
+      <div class="p-6 md:p-8 flex-1 flex flex-col">
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2">Sparkle Clean Co.</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant flex-1">Editorial, magazine-style content for a high-end exterior cleaning brand — tips carousels and social proof systems.</p>
+        <div class="flex gap-6 mt-6 pt-6 border-t border-white/10">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">340%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">PROFILE VISITS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">$4.2k</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">CONTRACT</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">4.8%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">ENGAGEMENT</div></div>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 font-label-caps text-label-caps text-secondary group-hover:text-tertiary transition-colors">
+          VIEW GALLERY <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </div>
       </div>
-    </div>
+    </button>
 
     <!-- Real Estate (Synergy / SDI) -->
-    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
-      <div class="absolute inset-0 grid grid-cols-2 gap-[2px] transition-transform duration-700 group-hover:scale-105">
-        <div class="bg-cover bg-center" style="background-image: url('assets/real-estate/synergy.png');"></div>
-        <div class="bg-cover bg-center" style="background-image: url('assets/real-estate/sdi.png');"></div>
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
-      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">REAL ESTATE</span>
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">RETAINER</span>
+    <button type="button" class="case-card glass-card group rounded-xl overflow-hidden flex flex-col text-left reveal" data-case="real-estate">
+      <div class="relative h-64 md:h-72 overflow-hidden bg-surface-container-low">
+        <div class="absolute inset-0 grid grid-cols-2 gap-[2px] transition-transform duration-700 group-hover:scale-105">
+          <img src="assets/real-estate/synergy.png" alt="Synergy Data Investments collage" class="w-full h-full object-cover"/>
+          <img src="assets/real-estate/sdi.png" alt="SDI Group collage" class="w-full h-full object-cover"/>
         </div>
-        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">Synergy Estates &amp; SDI Group</h3>
-        <p class="font-body-md text-body-md text-white/80">Brand messaging, property marketing, and lead-magnet workbooks for two real estate investment groups — a $4,200/mo retainer.</p>
-        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">340%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">PROFILE VISITS</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">$4.2k</div><div class="font-label-caps text-label-caps text-white/60 mt-1">RETAINER</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">4.8%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+        <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
+        <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">REAL ESTATE</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">RETAINER</span>
+        </div>
+        <span class="absolute top-4 right-4 font-label-caps text-label-caps px-3 py-1 rounded-full bg-secondary-container/80 text-white border border-secondary/40 inline-flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">collections</span>2 COLLAGES
+        </span>
+      </div>
+      <div class="p-6 md:p-8 flex-1 flex flex-col">
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2">Synergy Estates &amp; SDI Group</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant flex-1">Brand messaging, property marketing, and lead-magnet workbooks for two real estate investment groups — a $4,200/mo retainer.</p>
+        <div class="flex gap-6 mt-6 pt-6 border-t border-white/10">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">340%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">PROFILE VISITS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">$4.2k</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">RETAINER</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">4.8%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">ENGAGEMENT</div></div>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 font-label-caps text-label-caps text-secondary group-hover:text-tertiary transition-colors">
+          VIEW COLLAGES <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </div>
       </div>
-    </div>
+    </button>
 
     <!-- Maid With Love -->
-    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
-      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/maid-with-love/1.png');"></div>
-      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
-      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">CAMPAIGNS</span>
-          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">DIRECT RESPONSE</span>
+    <button type="button" class="case-card glass-card group rounded-xl overflow-hidden flex flex-col text-left reveal" data-case="maid">
+      <div class="relative h-64 md:h-72 overflow-hidden bg-surface-container-low">
+        <img src="assets/maid-with-love/1.png" alt="Maid With Love hero" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"/>
+        <div class="absolute inset-0 ring-1 ring-inset ring-white/10"></div>
+        <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">CAMPAIGNS</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white">DIRECT RESPONSE</span>
         </div>
-        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">Maid With Love</h3>
-        <p class="font-body-md text-body-md text-white/80">Booking-first creative — direct-response carousels &amp; reels engineered for a warm local audience.</p>
-        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">18.4k</div><div class="font-label-caps text-label-caps text-white/60 mt-1">REEL VIEWS</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">891</div><div class="font-label-caps text-label-caps text-white/60 mt-1">SAVES</div></div>
-          <div><div class="font-display-xl text-2xl text-tertiary leading-none">8.4%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+        <span class="absolute top-4 right-4 font-label-caps text-label-caps px-3 py-1 rounded-full bg-secondary-container/80 text-white border border-secondary/40 inline-flex items-center gap-1">
+          <span class="material-symbols-outlined text-[14px]">collections</span>2 PHOTOS
+        </span>
+      </div>
+      <div class="p-6 md:p-8 flex-1 flex flex-col">
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2">Maid With Love</h3>
+        <p class="font-body-md text-body-md text-on-surface-variant flex-1">Booking-first creative — direct-response carousels &amp; reels engineered for a warm local audience.</p>
+        <div class="flex gap-6 mt-6 pt-6 border-t border-white/10">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">18.4k</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">REEL VIEWS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">891</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">SAVES</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">8.4%</div><div class="font-label-caps text-label-caps text-on-surface-variant mt-1">ENGAGEMENT</div></div>
+        </div>
+        <div class="mt-6 inline-flex items-center gap-2 font-label-caps text-label-caps text-secondary group-hover:text-tertiary transition-colors">
+          VIEW GALLERY <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
         </div>
       </div>
-    </div>
+    </button>
 
   </div>
 </section>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-8 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+  <button type="button" id="lightbox-close" aria-label="Close" class="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 rounded-full glass-card flex items-center justify-center text-on-surface hover:text-tertiary z-10">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="relative w-full max-w-6xl max-h-full overflow-y-auto rounded-2xl glass-card p-6 md:p-10">
+    <div class="flex flex-wrap gap-2 mb-4" id="lightbox-tags"></div>
+    <h3 id="lightbox-title" class="font-headline-lg text-3xl md:text-headline-lg text-on-surface mb-3"></h3>
+    <p id="lightbox-desc" class="font-body-md text-body-md text-on-surface-variant max-w-3xl mb-6"></p>
+    <div id="lightbox-metrics" class="flex flex-wrap gap-8 pb-6 mb-6 border-b border-white/10"></div>
+    <div id="lightbox-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+</div>
 
 <!-- SERVICES -->
 <section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto" id="services">
@@ -521,6 +567,111 @@
         window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
       }
     });
+  });
+
+  // Case study lightbox
+  const cases = {
+    'freshnest': {
+      title: 'FreshNest Cleaning — Full Brand Build',
+      tags: ['CLEANING', 'BRAND BUILD'],
+      desc: 'Logo, colour system, and a complete social content suite for a residential cleaning service — service menus, before/afters, brand checklists. Designed to read as trustworthy and family-friendly at a glance.',
+      metrics: [['+272%', 'Followers'], ['6.2%', 'Engagement'], ['9', 'Bookings/mo']],
+      images: [
+        'assets/freshnest/1.png',
+        'assets/freshnest/2.png',
+        'assets/freshnest/3.png',
+        'assets/freshnest/4.png',
+        'assets/freshnest/5.png',
+        'assets/freshnest/6.png'
+      ]
+    },
+    'sparkle': {
+      title: 'Sparkle Clean Co. — Premium Positioning',
+      tags: ['PREMIUM', 'POSITIONING'],
+      desc: 'Editorial, magazine-style content series for a high-end exterior cleaning brand — tips carousels, social proof posts, and a consistent visual language that lifted profile visits 340%.',
+      metrics: [['340%', 'Profile Visits'], ['$4.2k', 'Contract'], ['4.8%', 'Engagement']],
+      images: [
+        'assets/sparkle-clean/1.png',
+        'assets/sparkle-clean/2.png',
+        'assets/sparkle-clean/3.png',
+        'assets/sparkle-clean/4.png',
+        'assets/sparkle-clean/5.png',
+        'assets/sparkle-clean/6.png'
+      ]
+    },
+    'real-estate': {
+      title: 'Synergy Estates & SDI Group',
+      tags: ['REAL ESTATE', 'RETAINER'],
+      desc: 'Brand messaging, property marketing, and full-spectrum content systems for two real estate investment groups — quarterly reports, property valuations, and lead-magnet workbooks. Below: collated samples for each brand.',
+      metrics: [['340%', 'Profile Visits'], ['$4.2k', 'Monthly Retainer'], ['4.8%', 'Engagement']],
+      images: [
+        'assets/real-estate/synergy.png',
+        'assets/real-estate/sdi.png'
+      ]
+    },
+    'maid': {
+      title: 'Maid With Love — Booking-First Campaigns',
+      tags: ['CAMPAIGNS', 'DIRECT RESPONSE'],
+      desc: 'Lead-focused creative for a residential cleaning brand — direct-response carousels and reels designed to put a phone number, location, and CTA in front of a warm local audience.',
+      metrics: [['18.4k', 'Reel Views'], ['891', 'Saves'], ['8.4%', 'Engagement']],
+      images: [
+        'assets/maid-with-love/1.png',
+        'assets/maid-with-love/2.png'
+      ]
+    }
+  };
+
+  const lightbox = document.getElementById('lightbox');
+  const lbTitle = document.getElementById('lightbox-title');
+  const lbDesc = document.getElementById('lightbox-desc');
+  const lbTags = document.getElementById('lightbox-tags');
+  const lbMetrics = document.getElementById('lightbox-metrics');
+  const lbGrid = document.getElementById('lightbox-grid');
+  const lbClose = document.getElementById('lightbox-close');
+
+  function openCase(key) {
+    const data = cases[key];
+    if (!data) return;
+    lbTitle.textContent = data.title;
+    lbDesc.textContent = data.desc;
+    lbTags.innerHTML = data.tags
+      .map(t => `<span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-secondary-container/30 border border-secondary/40 text-secondary">${t}</span>`)
+      .join('');
+    lbMetrics.innerHTML = data.metrics
+      .map(([val, label]) => `
+        <div>
+          <div class="font-display-xl text-3xl md:text-4xl text-tertiary leading-none">${val}</div>
+          <div class="font-label-caps text-label-caps text-on-surface-variant mt-2">${label.toUpperCase()}</div>
+        </div>
+      `).join('');
+    const isWide = key === 'real-estate';
+    const gridClasses = isWide
+      ? 'grid grid-cols-1 lg:grid-cols-2 gap-4'
+      : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4';
+    lbGrid.className = gridClasses;
+    lbGrid.innerHTML = data.images
+      .map(src => `
+        <a href="${src}" target="_blank" rel="noopener" class="block rounded-xl overflow-hidden border border-white/10 bg-surface-container-low hover:border-tertiary/60 transition-colors">
+          <img src="${src}" alt="" class="w-full h-auto block"/>
+        </a>
+      `).join('');
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCase() {
+    lightbox.classList.add('hidden');
+    lightbox.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.case-card').forEach(card => {
+    card.addEventListener('click', () => openCase(card.dataset.case));
+  });
+  lbClose.addEventListener('click', closeCase);
+  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeCase(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeCase();
   });
 </script>
 </body>

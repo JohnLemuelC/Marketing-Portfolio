@@ -3,8 +3,9 @@
 Single-page portfolio site for Cristine Cabugao (Social Media Manager &amp; Content Strategist).
 
 ## Stack
-- Static HTML / CSS / vanilla JS — no build step.
-- Fonts: Cormorant Garamond, Jost, DM Mono via Google Fonts.
+- Static HTML + Tailwind (CDN) + vanilla JS — no build step.
+- Fonts: Space Grotesk (display/headlines), Inter (body), Material Symbols (icons).
+- Design source: Stitch project "Liquid Glass Cinematic Portfolio" (`projects/15101050954201332242`).
 
 ## Run locally
 Open `index.html` in a browser, or:
@@ -24,24 +25,25 @@ assets/
   maid-with-love/   # Maid With Love brand samples (1-2.png)
 ```
 
-## Design system
-Light, warm aesthetic — cream / sand / terracotta palette.
+## Design system — Liquid Glass (dark glassmorphism)
 
 | Token | Value |
 |---|---|
-| `--bg` | `#f6f1ea` |
-| `--card` | `#fbf7f1` |
-| `--primary` (terracotta) | `#b8523a` |
-| `--sage` | `#7a9576` |
-| `--sand` | `#d9bd9c` |
-| `--ink` | `#3a2a22` |
+| `background` / `surface` | `#051424` (deep midnight) |
+| `surface-container-lowest` | `#010f1f` |
+| `primary` | `#c0c6de` |
+| `secondary` (electric violet) | `#d2bbff` |
+| `secondary-container` (button bg) | `#6001d1` |
+| `tertiary` (cyan) | `#4cd7f6` |
+| `on-surface` | `#d4e4fa` |
+
+Glass cards: `rgba(255,255,255,0.03)` background + `backdrop-filter: blur(30px)` + 1px white/10 border. Hover scales to 1.02× with deeper blur.
 
 ## Sections
-1. Hero — headline, stats, light analytics card
-2. About — bio + workspace illustration
-3. Services — 6-card grid
-4. Why Choose Me — checklist + 3 pillars
-5. Portfolio — 3 case studies (FreshNest, Sparkle Clean, Maid With Love)
-6. Process — 5 steps
-7. Testimonials — 3 client quotes
-8. CTA + Footer
+1. Hero — headline + gradient accent, 3 stats
+2. Strategy Meets Story — 3 value props (glass cards)
+3. Featured Work — 4 case studies (FreshNest, Sparkle Clean, Synergy/SDI, Maid With Love)
+4. My Expertise — 6 services in expandable list pattern
+5. Testimonials — 3 client quotes
+6. Contact — inquiry form (glass card)
+7. Footer

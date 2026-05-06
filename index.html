@@ -1,1461 +1,527 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cristine Cabugao — Social Media Manager &amp; Content Strategist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Jost:wght@200;300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cristine Cabugao — Cinematic Marketing Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background": "#051424",
+          "surface": "#051424",
+          "surface-dim": "#051424",
+          "surface-bright": "#2c3a4c",
+          "surface-container-lowest": "#010f1f",
+          "surface-container-low": "#0d1c2d",
+          "surface-container": "#122131",
+          "surface-container-high": "#1c2b3c",
+          "surface-container-highest": "#273647",
+          "surface-variant": "#273647",
+          "on-surface": "#d4e4fa",
+          "on-surface-variant": "#c6c6cd",
+          "outline": "#909097",
+          "outline-variant": "#46464c",
+          "primary": "#c0c6de",
+          "on-primary": "#2a3043",
+          "primary-container": "#020617",
+          "on-primary-container": "#72778d",
+          "secondary": "#d2bbff",
+          "on-secondary": "#3f008e",
+          "secondary-container": "#6001d1",
+          "on-secondary-container": "#c9aeff",
+          "tertiary": "#4cd7f6",
+          "on-tertiary": "#003640",
+          "tertiary-container": "#00080b",
+          "on-tertiary-container": "#00849a",
+          "error": "#ffb4ab",
+          "on-error": "#690005"
+        },
+        borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+        spacing: {
+          "container-max": "1440px",
+          "stack-xl": "8rem",
+          "stack-lg": "4rem",
+          "stack-md": "2rem",
+          "margin-x": "4rem",
+          "gutter": "2rem",
+          "glass-padding": "1.5rem"
+        },
+        fontFamily: {
+          "display-xl": ["Space Grotesk"],
+          "headline-lg": ["Space Grotesk"],
+          "headline-md": ["Space Grotesk"],
+          "label-caps": ["Space Grotesk"],
+          "body-lg": ["Inter"],
+          "body-md": ["Inter"]
+        },
+        fontSize: {
+          "display-xl": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+          "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+          "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+          "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+          "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }]
+        }
+      }
+    }
+  }
+</script>
 <style>
-:root {
-  --bg:        #f6f1ea;
-  --bg2:       #efe8de;
-  --bg3:       #e8dfd2;
-  --card:      #fbf7f1;
-  --white:     #ffffff;
-  --primary:   #b8523a;
-  --primary2:  #9d4530;
-  --sand:      #d9bd9c;
-  --sand2:     #c2a482;
-  --sage:      #7a9576;
-  --sage2:     #62805f;
-  --ink:       #3a2a22;
-  --mid:       #6f5a4e;
-  --soft:      #a89181;
-  --line:      rgba(58,42,34,0.10);
-  --shadow-s:  0 2px 16px rgba(58,42,34,0.06);
-  --shadow-m:  0 12px 44px rgba(58,42,34,0.10);
-  --shadow-l:  0 28px 80px rgba(58,42,34,0.14);
-  --radius:    20px;
-  --radius-s:  12px;
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
+  body {
+    background-color: #051424;
+    color: #d4e4fa;
+    font-family: 'Inter', sans-serif;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.4), inset 0 0 20px rgba(255,255,255,0.02);
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .glass-card:hover {
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    transform: scale(1.02);
+    border-color: rgba(255, 255, 255, 0.20);
+  }
+  .text-glow { text-shadow: 0 0 20px rgba(192, 198, 222, 0.30); }
+  .animate-enter {
+    animation: slideUpFade 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  @keyframes slideUpFade { to { opacity: 1; transform: translateY(0); } }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
 
-*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-html { scroll-behavior:smooth; font-size:16px; }
-body {
-  font-family: 'Jost', sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-}
+  .btn-primary {
+    background-color: #6001d1;
+    box-shadow: 0 0 20px rgba(96, 1, 209, 0.4);
+    transition: all 0.3s ease;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(96, 1, 209, 0.6);
+    transform: translateY(-2px);
+  }
+  .btn-ghost {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.20);
+    transition: all 0.3s ease;
+  }
+  .btn-ghost:hover { background: rgba(255,255,255,0.10); }
 
-.serif { font-family: 'Cormorant Garamond', serif; }
-.mono  { font-family: 'DM Mono', monospace; }
-h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.05; }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.8,.2,1), transform .9s cubic-bezier(.2,.8,.2,1); }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-.eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--soft);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--soft);
-}
-
-.container { max-width: 1140px; margin: 0 auto; padding: 0 40px; }
-section { position: relative; z-index: 1; }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 14px 28px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  border: none;
-}
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 20px rgba(184,82,58,0.3);
-}
-.btn-primary:hover {
-  background: var(--primary2);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(184,82,58,0.4);
-}
-.btn-sage {
-  background: var(--sage);
-  color: white;
-  box-shadow: 0 4px 20px rgba(122,149,118,0.25);
-}
-.btn-sage:hover { background: var(--sage2); transform: translateY(-2px); }
-.btn-outline {
-  background: transparent;
-  color: var(--ink);
-  border: 1.5px solid rgba(58,42,34,0.2);
-}
-.btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
-
-.reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: .1s; }
-.reveal-delay-2 { transition-delay: .2s; }
-.reveal-delay-3 { transition-delay: .3s; }
-.reveal-delay-4 { transition-delay: .4s; }
-.reveal-delay-5 { transition-delay: .5s; }
-.reveal-delay-6 { transition-delay: .6s; }
-
-/* NAV */
-.nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  height: 68px;
-  display: flex;
-  align-items: center;
-  transition: all 0.4s ease;
-}
-.nav.scrolled {
-  background: rgba(246,241,234,0.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--line);
-  box-shadow: 0 2px 24px rgba(58,42,34,0.05);
-}
-.nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
-.nav-logo {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 600;
-  font-style: italic;
-  color: var(--ink);
-  text-decoration: none;
-  letter-spacing: -0.5px;
-}
-.nav-logo span { color: var(--primary); }
-.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
-.nav-links a {
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--mid);
-  text-decoration: none;
-  transition: color .2s;
-}
-.nav-links a:hover { color: var(--primary); }
-.nav-cta { font-size: 11px !important; padding: 10px 22px; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
-.hamburger span { width: 24px; height: 1.5px; background: var(--ink); transition: all 0.3s; display: block; }
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 120px 0 80px;
-  overflow: hidden;
-  position: relative;
-}
-.hero-bg-dec { position: absolute; pointer-events: none; }
-.hero-circle-1 {
-  top: 8%; right: -120px;
-  width: 540px; height: 540px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,82,58,0.10) 0%, transparent 70%);
-}
-.hero-circle-2 {
-  bottom: 5%; left: -120px;
-  width: 420px; height: 420px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(122,149,118,0.10) 0%, transparent 70%);
-}
-.hero-line {
-  top: 0; right: 35%;
-  width: 1px; height: 100%;
-  background: linear-gradient(to bottom, transparent, rgba(184,82,58,0.10) 30%, rgba(184,82,58,0.10) 70%, transparent);
-}
-.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--primary);
-  background: rgba(184,82,58,0.08);
-  border: 1px solid rgba(184,82,58,0.18);
-  padding: 7px 16px;
-  border-radius: 30px;
-  margin-bottom: 32px;
-  animation: fadeUp 0.9s 0.2s ease both;
-}
-.hero-tag::before { content:''; width:6px; height:6px; border-radius:50%; background: var(--primary); }
-.hero-headline {
-  font-size: clamp(48px, 6vw, 84px);
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 0.97;
-  margin-bottom: 24px;
-  animation: fadeUp 0.9s 0.35s ease both;
-}
-.hero-headline em { font-style: italic; color: var(--primary); }
-.hero-sub {
-  font-size: 16px;
-  color: var(--mid);
-  line-height: 1.8;
-  max-width: 440px;
-  margin-bottom: 44px;
-  animation: fadeUp 0.9s 0.5s ease both;
-}
-.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeUp 0.9s 0.65s ease both; }
-.hero-stats {
-  display: flex;
-  gap: 40px;
-  margin-top: 56px;
-  padding-top: 40px;
-  border-top: 1px solid var(--line);
-  animation: fadeUp 0.9s 0.8s ease both;
-}
-.hstat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 38px;
-  font-weight: 700;
-  color: var(--primary);
-  line-height: 1;
-  display: block;
-}
-.hstat-label { font-size: 11px; color: var(--soft); letter-spacing: 0.5px; margin-top: 4px; }
-
-.hero-right { position: relative; animation: fadeIn 1.2s 0.6s ease both; }
-
-/* Light analytics card */
-.hero-card-main {
-  background: var(--white);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: var(--shadow-l);
-  border: 1px solid var(--line);
-  position: relative;
-}
-.analytics-mock { padding: 28px; }
-.am-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
-.am-title {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--soft);
-}
-.am-live {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 10px;
-  color: var(--sage2);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.am-live::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--sage); animation: pulse 2s ease-in-out infinite; }
-@keyframes pulse { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:.5; transform:scale(1.3);} }
-
-.am-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 24px; }
-.am-metric {
-  background: var(--bg2);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 14px 12px;
-  text-align: center;
-}
-.am-metric-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--ink);
-  line-height: 1;
-  display: block;
-}
-.am-metric-label {
-  font-size: 9px;
-  color: var(--soft);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-top: 4px;
-}
-.am-metric.up .am-metric-val { color: var(--sage2); }
-.am-metric.feature { background: rgba(184,82,58,0.10); border-color: rgba(184,82,58,0.20); }
-.am-metric.feature .am-metric-val { color: var(--primary); }
-
-.am-chart {
-  background: var(--bg2);
-  border-radius: 12px;
-  padding: 16px;
-  margin-bottom: 16px;
-}
-.chart-label {
-  font-size: 9px;
-  color: var(--soft);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 14px;
-}
-.chart-bars { display: flex; align-items: flex-end; gap: 6px; height: 60px; }
-.chart-bar { flex: 1; border-radius: 4px 4px 0 0; transition: all 0.3s; }
-.bar-1  { height: 30%; background: rgba(184,82,58,0.30); }
-.bar-2  { height: 45%; background: rgba(184,82,58,0.40); }
-.bar-3  { height: 38%; background: rgba(184,82,58,0.35); }
-.bar-4  { height: 60%; background: rgba(184,82,58,0.50); }
-.bar-5  { height: 52%; background: rgba(184,82,58,0.45); }
-.bar-6  { height: 75%; background: rgba(184,82,58,0.65); }
-.bar-7  { height: 68%; background: rgba(184,82,58,0.60); }
-.bar-8  { height: 85%; background: var(--primary); }
-.bar-9  { height: 92%; background: var(--primary); }
-.bar-10 { height: 100%; background: var(--primary); box-shadow: 0 0 16px rgba(184,82,58,0.4); }
-
-.am-top-post {
-  background: var(--bg2);
-  border-radius: 8px;
-  padding: 10px 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-}
-.am-top-thumb {
-  width: 28px; height: 28px;
-  border-radius: 6px;
-  background: rgba(184,82,58,0.20);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px;
-  flex-shrink: 0;
-}
-.am-top-title { font-size: 10px; font-weight: 600; color: var(--ink); }
-.am-top-sub  { font-size: 9px; color: var(--soft); }
-.am-top-pct  { font-size: 10px; color: var(--sage2); font-family: 'DM Mono', monospace; margin-left: auto; }
-
-/* Floating cards */
-.floating-card { position: absolute; border-radius: 16px; box-shadow: var(--shadow-m); }
-.fc-1 { top: -24px; left: -32px; background: white; padding: 16px 20px; width: 180px; border: 1px solid var(--line); }
-.fc-1-label { font-size: 9px; font-family: 'DM Mono', monospace; letter-spacing: 2px; text-transform: uppercase; color: var(--soft); margin-bottom: 6px; }
-.fc-1-val { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
-.fc-1-sub { font-size: 11px; color: var(--soft); margin-top: 2px; }
-.fc-2 { bottom: -20px; right: -24px; background: var(--sage); padding: 14px 18px; color: white; }
-.fc-2-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; margin-bottom: 4px; font-family: 'DM Mono', monospace; }
-.fc-2-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; }
-.fc-3 { top: 50%; right: -36px; transform: translateY(-50%); background: var(--primary); padding: 12px 16px; color: white; text-align: center; }
-.fc-3-icon { font-size: 20px; margin-bottom: 4px; }
-.fc-3-text { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.9; font-family: 'DM Mono', monospace; }
-
-/* ABOUT */
-.about { padding: 120px 0; background: var(--card); }
-.about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
-.about-visual { position: relative; }
-.about-portrait {
-  width: 100%;
-  aspect-ratio: 3/4;
-  border-radius: 24px;
-  background: var(--bg2);
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--line);
-}
-.workspace-art {
-  width: 100%; height: 100%;
-  background: linear-gradient(160deg, #f7eedf 0%, #efe1c9 60%, #e6d3b7 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 32px;
-  gap: 16px;
-}
-.workspace-monogram {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 64px;
-  font-weight: 700;
-  font-style: italic;
-  color: rgba(184,82,58,0.30);
-  line-height: 1;
-}
-.desk-element {
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(184,82,58,0.10);
-  border-radius: 12px;
-  width: 100%;
-  padding: 14px 16px;
-}
-.desk-el-label {
-  font-size: 8px;
-  letter-spacing: 2px;
-  color: var(--soft);
-  text-transform: uppercase;
-  font-family: 'DM Mono', monospace;
-  margin-bottom: 8px;
-}
-.desk-bar { height: 3px; border-radius: 3px; background: rgba(58,42,34,0.06); margin-bottom: 5px; }
-.desk-bar.accent { background: var(--primary); }
-.desk-bar.sage   { background: var(--sage); }
-.desk-bar.sand   { background: var(--sand2); }
-.desk-rating { display: flex; gap: 4px; margin-top: 4px; }
-.desk-rating > div { flex: 1; height: 20px; border-radius: 4px; background: var(--primary); opacity: 0.8; }
-.desk-rating > div.partial { flex: 0.7; opacity: 0.4; }
-.desk-rating-text { font-size: 9px; color: var(--soft); margin-top: 6px; font-family: 'DM Mono', monospace; letter-spacing: 1px; }
-.about-badge {
-  position: absolute;
-  bottom: -20px; right: -20px;
-  background: var(--primary);
-  color: white;
-  border-radius: 16px;
-  padding: 18px 22px;
-  box-shadow: var(--shadow-m);
-  z-index: 2;
-}
-.about-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; display: block; line-height: 1; }
-.about-badge-text { font-size: 10px; opacity: 0.85; letter-spacing: 1px; margin-top: 3px; }
-.about-left-tag {
-  position: absolute;
-  top: -16px; left: 24px;
-  background: white;
-  border-radius: 30px;
-  padding: 8px 18px;
-  box-shadow: var(--shadow-s);
-  font-size: 11px;
-  font-family: 'DM Mono', monospace;
-  letter-spacing: 1.5px;
-  color: var(--primary);
-  border: 1px solid var(--line);
-}
-.about-text .eyebrow { margin-bottom: 20px; }
-.about-text h2 { font-size: clamp(36px, 4vw, 54px); margin-bottom: 24px; }
-.about-text h2 em { color: var(--primary); font-style: italic; }
-.about-text p { font-size: 15px; color: var(--mid); line-height: 1.85; margin-bottom: 16px; }
-.about-text p:last-of-type { margin-bottom: 32px; }
-.approach-tagline {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-style: italic;
-  color: var(--primary);
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-.approach-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 36px; }
-.approach-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--mid); }
-.approach-item::before { content: '✦'; color: var(--primary); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-
-/* SERVICES */
-.services { padding: 120px 0; }
-.section-header { text-align: center; margin-bottom: 72px; }
-.section-header .eyebrow { justify-content: center; margin-bottom: 16px; }
-.section-header .eyebrow::before { display: none; }
-.section-header h2 { font-size: clamp(38px, 4.5vw, 60px); margin-bottom: 14px; }
-.section-header h2 em { color: var(--primary); font-style: italic; }
-.section-header p { font-size: 16px; color: var(--mid); max-width: 480px; margin: 0 auto; }
-
-.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.service-card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 36px 30px;
-  border: 1px solid var(--line);
-  position: relative;
-  overflow: hidden;
-  transition: var(--transition);
-  cursor: default;
-}
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: transparent; transition: background 0.3s; }
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-m); }
-.service-card:hover::before { background: var(--primary); }
-.service-card.featured { background: var(--primary); border-color: transparent; }
-.service-card.featured::before { background: rgba(255,255,255,0.3); }
-.service-icon {
-  width: 48px; height: 48px;
-  border-radius: 12px;
-  background: rgba(184,82,58,0.10);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  transition: transform 0.3s;
-}
-.service-card:hover .service-icon { transform: scale(1.08); }
-.service-card.featured .service-icon { background: rgba(255,255,255,0.18); }
-.service-num {
-  position: absolute;
-  top: 20px; right: 24px;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 52px;
-  font-weight: 700;
-  color: rgba(58,42,34,0.07);
-  line-height: 1;
-}
-.service-card.featured .service-num { color: rgba(255,255,255,0.10); }
-.service-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; margin-bottom: 10px; color: var(--ink); }
-.service-card.featured .service-title { color: white; }
-.service-desc { font-size: 13.5px; color: var(--mid); line-height: 1.75; }
-.service-card.featured .service-desc { color: rgba(255,255,255,0.85); }
-
-/* WHY (light) */
-.why { padding: 120px 0; background: var(--bg2); position: relative; overflow: hidden; }
-.why::before { content: ''; position: absolute; top: -200px; right: -200px; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(184,82,58,0.10) 0%, transparent 70%); pointer-events: none; }
-.why::after  { content: ''; position: absolute; bottom: -150px; left: -150px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(122,149,118,0.10) 0%, transparent 70%); pointer-events: none; }
-.why-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; position: relative; z-index: 1; }
-.why-left h2 { font-size: clamp(36px, 4vw, 54px); color: var(--ink); margin-bottom: 20px; }
-.why-left h2 em { color: var(--primary); font-style: italic; }
-.why-left p { font-size: 15px; color: var(--mid); line-height: 1.85; margin-bottom: 40px; }
-.why-checks { display: flex; flex-direction: column; gap: 14px; }
-.why-check {
-  display: flex; align-items: center; gap: 14px;
-  font-size: 15px; color: var(--ink);
-  padding: 14px 20px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  transition: all 0.3s;
-}
-.why-check:hover { background: var(--card); border-color: rgba(184,82,58,0.20); transform: translateX(4px); }
-.why-check-icon {
-  width: 32px; height: 32px;
-  border-radius: 8px;
-  background: rgba(184,82,58,0.12);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-.why-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  padding: 40px 36px;
-  margin-bottom: 20px;
-  box-shadow: var(--shadow-s);
-}
-.why-card:last-child { margin-bottom: 0; }
-.why-card-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 700; color: var(--primary); line-height: 1; opacity: 0.85; margin-bottom: 8px; }
-.why-card-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-.why-card-desc { font-size: 13.5px; color: var(--mid); line-height: 1.75; }
-
-/* PORTFOLIO */
-.portfolio { padding: 120px 0; background: var(--bg3); }
-.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.port-card {
-  background: var(--card);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: var(--shadow-s);
-  border: 1px solid var(--line);
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-}
-.port-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-l); }
-
-.port-visual {
-  height: 280px;
-  position: relative;
-  overflow: hidden;
-}
-.port-hero {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-.port-card:hover .port-hero { transform: scale(1.04); }
-.port-visual-split {
-  display: flex;
-  gap: 2px;
-  background: var(--white);
-}
-.port-hero-half {
-  flex: 1;
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-.port-card:hover .port-hero-half { transform: scale(1.04); }
-.port-thumbs {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
-  display: flex;
-  gap: 8px;
-}
-.port-thumb {
-  flex: 1;
-  aspect-ratio: 1;
-  border-radius: 8px;
-  object-fit: cover;
-  background: white;
-  border: 2px solid white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-}
-
-.port-info { padding: 28px 28px 32px; flex: 1; display: flex; flex-direction: column; }
-.port-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--primary);
-  background: rgba(184,82,58,0.08);
-  padding: 4px 10px;
-  border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 12px;
-  align-self: flex-start;
-}
-.port-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 8px; line-height: 1.2; }
-.port-desc { font-size: 13px; color: var(--mid); line-height: 1.7; }
-.port-metrics {
-  display: flex;
-  gap: 16px;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-.port-metric-val { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--primary); display: block; line-height: 1; }
-.port-metric-label { font-size: 10px; color: var(--soft); margin-top: 2px; }
-
-/* PROCESS */
-.process { padding: 120px 0; }
-.process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; position: relative; margin-top: 72px; }
-.process-connector {
-  position: absolute;
-  top: 36px; left: 10%; right: 10%;
-  height: 1px;
-  background: linear-gradient(90deg, var(--primary), rgba(184,82,58,0.2) 80%, transparent);
-  z-index: 0;
-}
-.process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
-.ps-circle {
-  width: 72px; height: 72px;
-  border-radius: 50%;
-  background: var(--card);
-  border: 2px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 24px;
-  box-shadow: var(--shadow-s);
-  transition: var(--transition);
-}
-.process-step:hover .ps-circle { background: var(--primary); border-color: var(--primary); transform: scale(1.1); box-shadow: 0 8px 32px rgba(184,82,58,0.30); }
-.ps-num { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--soft); margin-bottom: 8px; }
-.ps-title { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
-.ps-desc { font-size: 12px; color: var(--soft); line-height: 1.6; }
-
-/* TESTIMONIALS */
-.testimonials { padding: 120px 0; background: var(--card); }
-.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-.testi-card {
-  background: white;
-  border-radius: 20px;
-  padding: 36px 32px;
-  position: relative;
-  box-shadow: var(--shadow-s);
-  transition: var(--transition);
-  border: 1px solid var(--line);
-}
-.testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-m); }
-.testi-quote { font-family: 'Cormorant Garamond', serif; font-size: 72px; color: rgba(184,82,58,0.15); line-height: 0.7; margin-bottom: 14px; }
-.testi-text { font-size: 15px; color: var(--mid); line-height: 1.8; font-style: italic; margin-bottom: 24px; }
-.testi-person { display: flex; align-items: center; gap: 12px; }
-.testi-avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--primary);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: white;
-  flex-shrink: 0;
-}
-.testi-name { font-weight: 600; font-size: 14px; color: var(--ink); }
-.testi-role { font-size: 12px; color: var(--soft); }
-.testi-stars { color: #e0a02b; font-size: 13px; margin-bottom: 4px; letter-spacing: 1px; }
-
-/* CTA */
-.cta-section { padding: 140px 0; background: var(--primary); text-align: center; position: relative; overflow: hidden; }
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: -200px; left: 50%; transform: translateX(-50%);
-  width: 800px; height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.cta-eyebrow { color: rgba(255,255,255,0.55); margin-bottom: 20px; justify-content: center; }
-.cta-eyebrow::before { background: rgba(255,255,255,0.35); }
-.cta-section h2 { font-size: clamp(40px, 5.5vw, 72px); color: white; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.05; }
-.cta-section h2 em { color: var(--sand); font-style: italic; }
-.cta-section p { font-size: 16px; color: rgba(255,255,255,0.78); max-width: 480px; margin: 0 auto 48px; line-height: 1.8; }
-.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-.btn-white {
-  background: white;
-  color: var(--primary);
-  font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 16px 36px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-white:hover { background: var(--sand); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
-.btn-ghost-white {
-  background: transparent;
-  color: rgba(255,255,255,0.92);
-  border: 1.5px solid rgba(255,255,255,0.4);
-  font-family: 'Jost', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 16px 36px;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-ghost-white:hover { border-color: white; color: white; transform: translateY(-2px); }
-.cta-contact-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 48px; }
-.cta-pill {
-  display: flex; align-items: center; gap: 8px;
-  background: rgba(255,255,255,0.10);
-  border: 1px solid rgba(255,255,255,0.22);
-  color: rgba(255,255,255,0.88);
-  padding: 10px 20px;
-  border-radius: 30px;
-  font-size: 13px;
-  text-decoration: none;
-  transition: all 0.2s;
-}
-.cta-pill:hover { background: rgba(255,255,255,0.18); color: white; }
-
-/* FOOTER (light) */
-footer { background: var(--card); padding: 64px 0 40px; border-top: 1px solid var(--line); }
-.footer-inner { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
-.footer-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 600; font-style: italic; color: var(--ink); margin-bottom: 8px; }
-.footer-brand-name span { color: var(--primary); }
-.footer-role { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 2px; color: var(--soft); text-transform: uppercase; margin-bottom: 16px; }
-.footer-bio { font-size: 13px; color: var(--mid); line-height: 1.75; max-width: 280px; }
-.footer-col-title { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--soft); margin-bottom: 20px; }
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-.footer-links a { font-size: 14px; color: var(--mid); text-decoration: none; transition: color 0.2s; }
-.footer-links a:hover { color: var(--primary); }
-.footer-bottom { border-top: 1px solid var(--line); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
-.footer-copy { font-size: 12px; color: var(--soft); }
-.footer-socials { display: flex; gap: 16px; }
-.footer-social {
-  width: 36px; height: 36px;
-  border-radius: 8px;
-  background: var(--bg2);
-  border: 1px solid var(--line);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--mid);
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-.footer-social:hover { background: var(--primary); border-color: var(--primary); color: white; }
-
-@keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
-/* MOBILE MENU */
-.mobile-menu {
-  position: fixed;
-  inset: 0;
-  background: var(--bg);
-  z-index: 998;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
-}
-.mobile-menu.open { transform: translateX(0); }
-.mobile-menu a {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--ink);
-  text-decoration: none;
-  font-style: italic;
-  transition: color 0.2s;
-}
-.mobile-menu a:hover { color: var(--primary); }
-.mobile-close { position: absolute; top: 24px; right: 24px; background: none; border: none; color: var(--ink); font-size: 24px; cursor: pointer; }
-
-@media (max-width: 1024px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 60px; }
-  .about-inner { grid-template-columns: 1fr; gap: 60px; }
-  .why-inner { grid-template-columns: 1fr; gap: 60px; }
-  .services-grid { grid-template-columns: repeat(2,1fr); }
-  .testi-grid { grid-template-columns: repeat(2,1fr); }
-  .process-steps { grid-template-columns: repeat(3,1fr); gap: 24px; }
-  .process-connector { display: none; }
-  .footer-inner { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 768px) {
-  .container { padding: 0 24px; }
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .services-grid { grid-template-columns: 1fr; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .testi-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr 1fr; }
-  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-  .hero-stats { gap: 24px; flex-wrap: wrap; }
-  .fc-1, .fc-2, .fc-3 { display: none; }
-}
+  .gradient-text {
+    background: linear-gradient(90deg, #d2bbff 0%, #4cd7f6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 </style>
 </head>
-<body>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-secondary-container selection:text-white">
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="toggleMenu()">×</button>
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#portfolio" onclick="toggleMenu()">Portfolio</a>
-  <a href="#process" onclick="toggleMenu()">Process</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-</div>
-
-<nav class="nav" id="nav">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">Cristine <span>Cabugao</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Work</a></li>
-        <li><a href="#process">Process</a></li>
-        <li><a href="#contact" class="btn btn-primary nav-cta">Let's Connect</a></li>
-      </ul>
-      <div class="hamburger" onclick="toggleMenu()" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 bg-background/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.4)]">
+  <div class="flex justify-between items-center px-6 md:px-margin-x py-5 md:py-6 w-full max-w-container-max mx-auto">
+    <a class="font-headline-md text-headline-md font-bold text-on-surface tracking-tighter" href="#">CRISTINE</a>
+    <div class="hidden md:flex items-center gap-8">
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#work">Work</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#services">Services</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#about">About</a>
+      <a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#contact">Contact</a>
     </div>
+    <a class="hidden md:inline-flex items-center justify-center px-6 py-2 rounded-full font-label-caps text-label-caps btn-ghost text-primary transition-all" href="#contact">Inquire</a>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-bg-dec hero-circle-1"></div>
-  <div class="hero-bg-dec hero-circle-2"></div>
-  <div class="hero-bg-dec hero-line"></div>
+<main class="flex-grow pt-24 md:pt-32">
 
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-left">
-        <div class="hero-tag">Social Media Manager &amp; Strategist</div>
-        <h1 class="hero-headline">
-          Helping Businesses<br>Turn <em>Content</em><br>Into Clients.
-        </h1>
-        <p class="hero-sub">I help service-based businesses build a stronger online presence through strategic content creation, social media management, branding, and growth-focused digital marketing.</p>
-        <div class="hero-btns">
-          <a href="#portfolio" class="btn btn-primary">View My Work →</a>
-          <a href="#contact" class="btn btn-outline">Let's Work Together</a>
-        </div>
-        <div class="hero-stats">
-          <div>
-            <span class="hstat-num">50+</span>
-            <div class="hstat-label">Brands Elevated</div>
-          </div>
-          <div>
-            <span class="hstat-num">242%</span>
-            <div class="hstat-label">Avg. Growth Rate</div>
-          </div>
-          <div>
-            <span class="hstat-num">100%</span>
-            <div class="hstat-label">Strategy-Driven</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-right">
-        <div class="floating-card fc-1">
-          <div class="fc-1-label">Monthly Reach</div>
-          <div class="fc-1-val">18.4k</div>
-          <div class="fc-1-sub">↑ 242% this month</div>
-        </div>
-        <div class="floating-card fc-3">
-          <div class="fc-3-icon">✦</div>
-          <div class="fc-3-text">Growing</div>
-        </div>
-        <div class="floating-card fc-2">
-          <div class="fc-2-label">New Clients</div>
-          <div class="fc-2-val">+14 this month</div>
-        </div>
-
-        <div class="hero-card-main">
-          <div class="analytics-mock">
-            <div class="am-header">
-              <span class="am-title">Analytics Overview</span>
-              <span class="am-live">Live</span>
-            </div>
-            <div class="am-metrics">
-              <div class="am-metric up">
-                <span class="am-metric-val">+272%</span>
-                <div class="am-metric-label">Follower Growth</div>
-              </div>
-              <div class="am-metric feature">
-                <span class="am-metric-val">6.8%</span>
-                <div class="am-metric-label">Engagement</div>
-              </div>
-              <div class="am-metric up">
-                <span class="am-metric-val">891</span>
-                <div class="am-metric-label">Post Saves</div>
-              </div>
-            </div>
-            <div class="am-chart">
-              <div class="chart-label">Content Performance · 10 weeks</div>
-              <div class="chart-bars">
-                <div class="chart-bar bar-1"></div>
-                <div class="chart-bar bar-2"></div>
-                <div class="chart-bar bar-3"></div>
-                <div class="chart-bar bar-4"></div>
-                <div class="chart-bar bar-5"></div>
-                <div class="chart-bar bar-6"></div>
-                <div class="chart-bar bar-7"></div>
-                <div class="chart-bar bar-8"></div>
-                <div class="chart-bar bar-9"></div>
-                <div class="chart-bar bar-10"></div>
-              </div>
-            </div>
-            <div class="am-top-post">
-              <div class="am-top-thumb">▶</div>
-              <div>
-                <div class="am-top-title">Before &amp; After Reel</div>
-                <div class="am-top-sub">18,400 views · 891 saves</div>
-              </div>
-              <div class="am-top-pct">+94%</div>
-            </div>
-            <div class="am-top-post">
-              <div class="am-top-thumb" style="background: rgba(122,149,118,0.20);">◐</div>
-              <div>
-                <div class="am-top-title">Tips Carousel</div>
-                <div class="am-top-sub">12,100 reach · 340 comments</div>
-              </div>
-              <div class="am-top-pct">+67%</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- HERO -->
+<section class="relative min-h-[88vh] flex items-center justify-center px-6 md:px-margin-x py-stack-xl overflow-hidden">
+  <div class="absolute inset-0 z-0">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary-container rounded-full mix-blend-screen filter blur-[120px] opacity-30 animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-tertiary rounded-full mix-blend-screen filter blur-[120px] opacity-20"></div>
   </div>
-</section>
-
-<section class="about" id="about">
-  <div class="container">
-    <div class="about-inner">
-      <div class="about-visual reveal">
-        <div class="about-left-tag">Social Media Strategist</div>
-        <div class="about-portrait">
-          <div class="workspace-art">
-            <div class="workspace-monogram">CC</div>
-            <div class="desk-element">
-              <div class="desk-el-label">Content Strategy</div>
-              <div class="desk-bar accent" style="width:85%;"></div>
-              <div class="desk-bar" style="width:60%;"></div>
-              <div class="desk-bar sage" style="width:75%;"></div>
-            </div>
-            <div class="desk-element">
-              <div class="desk-el-label">Brand Growth · This Month</div>
-              <div class="desk-bar accent" style="width:92%;"></div>
-              <div class="desk-bar sand" style="width:68%;"></div>
-              <div class="desk-bar" style="width:45%;"></div>
-            </div>
-            <div class="desk-element">
-              <div class="desk-el-label">Client Satisfaction</div>
-              <div class="desk-rating">
-                <div></div><div></div><div></div><div></div><div class="partial"></div>
-              </div>
-              <div class="desk-rating-text">4.9 / 5.0 avg rating</div>
-            </div>
-          </div>
-        </div>
-        <div class="about-badge">
-          <span class="about-badge-num">3+</span>
-          <div class="about-badge-text">Years of Experience</div>
-        </div>
-      </div>
-
-      <div class="about-text">
-        <div class="eyebrow reveal">About Me</div>
-        <h2 class="reveal reveal-delay-1">Hi, I'm <em>Cristine</em></h2>
-        <p class="reveal reveal-delay-2">I'm a Social Media Manager and Digital Marketing Specialist passionate about helping businesses grow online through intentional strategy and creative execution.</p>
-        <p class="reveal reveal-delay-2">I specialize in building social media systems that attract, engage, and convert audiences into paying clients.</p>
-        <p class="reveal reveal-delay-3">With experience in customer service, sales, virtual assistance, content creation, and digital marketing, I understand both the creative and business side of online growth.</p>
-        <div class="reveal reveal-delay-3">
-          <p class="approach-tagline">My approach is simple:</p>
-          <ul class="approach-list">
-            <li class="approach-item">Create content with purpose</li>
-            <li class="approach-item">Build trust through consistency</li>
-            <li class="approach-item">Turn visibility into measurable results</li>
-          </ul>
-        </div>
-        <div class="reveal reveal-delay-4">
-          <a href="#contact" class="btn btn-primary">Work With Me →</a>
-        </div>
-      </div>
+  <div class="relative z-10 w-full max-w-container-max mx-auto text-center flex flex-col items-center">
+    <span class="font-label-caps text-label-caps text-secondary mb-6 tracking-[0.2em] animate-enter">CINEMATIC MARKETING PORTFOLIO</span>
+    <h1 class="font-display-xl text-5xl md:text-display-xl text-on-surface mb-8 max-w-4xl text-glow animate-enter delay-100 leading-[1.05]">
+      Helping Businesses<br/>Turn <span class="gradient-text">Content</span><br/>Into Clients.
+    </h1>
+    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12 animate-enter delay-200">
+      I help service-based businesses build a stronger online presence through strategic content creation, social media management, branding, and growth-focused digital marketing.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center animate-enter delay-300">
+      <a class="btn-primary text-white font-label-caps text-label-caps px-8 py-4 rounded-full inline-flex items-center gap-2" href="#work">
+        VIEW WORK <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+      </a>
+      <a class="btn-ghost text-on-surface font-label-caps text-label-caps px-8 py-4 rounded-full inline-flex items-center gap-2" href="#contact">
+        LET'S WORK TOGETHER
+      </a>
     </div>
-  </div>
-</section>
 
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow reveal">What I Offer</div>
-      <h2 class="reveal reveal-delay-1">How I Help <em>Businesses</em> Grow</h2>
-      <p class="reveal reveal-delay-2">Six focused services designed to build your brand, grow your audience, and convert followers into clients.</p>
-    </div>
-    <div class="services-grid">
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">01</div>
-        <div class="service-icon">◉</div>
-        <div class="service-title">Social Media Management</div>
-        <div class="service-desc">Strategic planning, consistent scheduling, platform growth, and daily engagement management so your brand never goes quiet.</div>
-      </div>
-      <div class="service-card featured reveal reveal-delay-2">
-        <div class="service-num">02</div>
-        <div class="service-icon">◎</div>
-        <div class="service-title">Content Strategy</div>
-        <div class="service-desc">Data-backed content planning designed around your ideal audience — what they want to see, when they want to see it, and how to make them act.</div>
-      </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-num">03</div>
-        <div class="service-icon">✦</div>
-        <div class="service-title">Graphic Design</div>
-        <div class="service-desc">Branded, professional visuals that stop the scroll, build brand recognition, and communicate your value at a glance.</div>
-      </div>
-      <div class="service-card reveal reveal-delay-1">
-        <div class="service-num">04</div>
-        <div class="service-icon">✎</div>
-        <div class="service-title">Caption Writing</div>
-        <div class="service-desc">Clear, strategic messaging that resonates with your audience, builds connection, and drives real action — not just likes.</div>
-      </div>
-      <div class="service-card reveal reveal-delay-2">
-        <div class="service-num">05</div>
-        <div class="service-icon">◈</div>
-        <div class="service-title">Brand Positioning</div>
-        <div class="service-desc">Helping businesses communicate their value clearly and consistently so they're remembered, trusted, and chosen over competitors.</div>
-      </div>
-      <div class="service-card reveal reveal-delay-3">
-        <div class="service-num">06</div>
-        <div class="service-icon">▲</div>
-        <div class="service-title">Analytics &amp; Optimization</div>
-        <div class="service-desc">Monthly performance tracking, insight reporting, and ongoing strategy refinement to ensure your social media keeps improving.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="why" id="why">
-  <div class="container">
-    <div class="why-inner">
-      <div class="why-left">
-        <div class="eyebrow reveal">Why Choose Me</div>
-        <h2 class="reveal reveal-delay-1">More Than Just<br><em>Posting Content.</em></h2>
-        <p class="reveal reveal-delay-2">I focus on building systems that create long-term, compounding growth — not just short-term spikes. Here's what working with me means for your business.</p>
-
-        <div class="why-checks">
-          <div class="why-check reveal reveal-delay-1">
-            <div class="why-check-icon">✓</div>
-            Strategic execution — every post has a purpose
-          </div>
-          <div class="why-check reveal reveal-delay-2">
-            <div class="why-check-icon">◉</div>
-            Consistent, proactive communication
-          </div>
-          <div class="why-check reveal reveal-delay-3">
-            <div class="why-check-icon">✦</div>
-            Creative solutions to real business problems
-          </div>
-          <div class="why-check reveal reveal-delay-4">
-            <div class="why-check-icon">▲</div>
-            Data-driven decisions, not guesswork
-          </div>
-          <div class="why-check reveal reveal-delay-5">
-            <div class="why-check-icon">◈</div>
-            Professional brand presentation always
-          </div>
-          <div class="why-check reveal reveal-delay-6">
-            <div class="why-check-icon">◎</div>
-            Results-focused collaboration, every step
-          </div>
-        </div>
-      </div>
-
-      <div class="why-right">
-        <div class="why-card reveal reveal-delay-1">
-          <div class="why-card-num">01</div>
-          <div class="why-card-title">You Get Me — Not a Team You Never Meet</div>
-          <div class="why-card-desc">I personally manage your account, communicate with you directly, and remain invested in your results every single month.</div>
-        </div>
-        <div class="why-card reveal reveal-delay-2">
-          <div class="why-card-num">02</div>
-          <div class="why-card-title">Strategy First, Content Second</div>
-          <div class="why-card-desc">Every piece of content is built on a strategic foundation — your audience, your goals, and what actually drives them to book.</div>
-        </div>
-        <div class="why-card reveal reveal-delay-3">
-          <div class="why-card-num">03</div>
-          <div class="why-card-title">Systems That Scale With Your Business</div>
-          <div class="why-card-desc">I build content systems that grow alongside you — so your social media becomes more valuable, not more complicated, as you expand.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="portfolio" id="portfolio">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow reveal">Selected Work</div>
-      <h2 class="reveal reveal-delay-1"><em>Real Brands.</em> Real Results.</h2>
-      <p class="reveal reveal-delay-2">A selection of brands I've built, grown, and transformed through strategic social media management.</p>
-    </div>
-    <div class="portfolio-grid">
-
-      <div class="port-card reveal reveal-delay-1">
-        <div class="port-visual">
-          <img class="port-hero" src="assets/freshnest/1.png" alt="FreshNest Cleaning hero">
-          <div class="port-thumbs">
-            <img class="port-thumb" src="assets/freshnest/2.png" alt="">
-            <img class="port-thumb" src="assets/freshnest/3.png" alt="">
-            <img class="port-thumb" src="assets/freshnest/5.png" alt="">
-          </div>
-        </div>
-        <div class="port-info">
-          <span class="port-tag">Cleaning Services</span>
-          <div class="port-title">FreshNest Cleaning — Full Brand Build</div>
-          <div class="port-desc">Logo, color system, and full social content suite — service menus, before/afters, brand checklists. Designed to read as trustworthy and family-friendly at a glance.</div>
-          <div class="port-metrics">
-            <div>
-              <span class="port-metric-val">+272%</span>
-              <div class="port-metric-label">Follower Growth</div>
-            </div>
-            <div>
-              <span class="port-metric-val">6.2%</span>
-              <div class="port-metric-label">Engagement</div>
-            </div>
-            <div>
-              <span class="port-metric-val">9</span>
-              <div class="port-metric-label">New Bookings/Mo</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="port-card reveal reveal-delay-2">
-        <div class="port-visual">
-          <img class="port-hero" src="assets/sparkle-clean/2.png" alt="Sparkle Clean hero">
-          <div class="port-thumbs">
-            <img class="port-thumb" src="assets/sparkle-clean/1.png" alt="">
-            <img class="port-thumb" src="assets/sparkle-clean/3.png" alt="">
-            <img class="port-thumb" src="assets/sparkle-clean/5.png" alt="">
-          </div>
-        </div>
-        <div class="port-info">
-          <span class="port-tag">Premium Cleaning</span>
-          <div class="port-title">Sparkle Clean Co. — Premium Positioning</div>
-          <div class="port-desc">Editorial, magazine-style content series for a high-end exterior cleaning brand. Tips carousels, social proof posts, and a consistent visual language that lifted profile visits 340%.</div>
-          <div class="port-metrics">
-            <div>
-              <span class="port-metric-val">340%</span>
-              <div class="port-metric-label">Profile Visits</div>
-            </div>
-            <div>
-              <span class="port-metric-val">$4.2k</span>
-              <div class="port-metric-label">Contract Landed</div>
-            </div>
-            <div>
-              <span class="port-metric-val">4.8%</span>
-              <div class="port-metric-label">Engagement</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="port-card reveal reveal-delay-3">
-        <div class="port-visual port-visual-split">
-          <img class="port-hero-half" src="assets/real-estate/synergy.png" alt="Synergy Data Investments / SDI Group">
-          <img class="port-hero-half" src="assets/real-estate/sdi.png" alt="SDI Group">
-        </div>
-        <div class="port-info">
-          <span class="port-tag">Real Estate</span>
-          <div class="port-title">Synergy Estates &amp; SDI Group</div>
-          <div class="port-desc">Brand messaging, property marketing, and full-spectrum content systems for two real estate investment groups — quarterly reports, property valuations, and lead-magnet workbooks that landed a $4,200/mo retainer.</div>
-          <div class="port-metrics">
-            <div>
-              <span class="port-metric-val">340%</span>
-              <div class="port-metric-label">Profile Visits</div>
-            </div>
-            <div>
-              <span class="port-metric-val">$4.2k</span>
-              <div class="port-metric-label">Monthly Retainer</div>
-            </div>
-            <div>
-              <span class="port-metric-val">4.8%</span>
-              <div class="port-metric-label">Engagement</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="port-card reveal reveal-delay-4">
-        <div class="port-visual">
-          <img class="port-hero" src="assets/maid-with-love/1.png" alt="Maid With Love hero">
-          <div class="port-thumbs">
-            <img class="port-thumb" src="assets/maid-with-love/2.png" alt="">
-            <img class="port-thumb" src="assets/freshnest/4.png" alt="">
-            <img class="port-thumb" src="assets/freshnest/6.png" alt="">
-          </div>
-        </div>
-        <div class="port-info">
-          <span class="port-tag">Content Campaigns</span>
-          <div class="port-title">Maid With Love — Booking-First Campaigns</div>
-          <div class="port-desc">Lead-focused creative for a residential cleaning brand — direct-response carousels and reels designed to put a phone number, location, and CTA in front of a warm local audience.</div>
-          <div class="port-metrics">
-            <div>
-              <span class="port-metric-val">18.4k</span>
-              <div class="port-metric-label">Reel Views</div>
-            </div>
-            <div>
-              <span class="port-metric-val">891</span>
-              <div class="port-metric-label">Post Saves</div>
-            </div>
-            <div>
-              <span class="port-metric-val">8.4%</span>
-              <div class="port-metric-label">Engagement</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="process" id="process">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow reveal">How I Work</div>
-      <h2 class="reveal reveal-delay-1">My <em>Process</em></h2>
-      <p class="reveal reveal-delay-2">A clear, structured approach from our first conversation to measurable results — and beyond.</p>
-    </div>
-    <div class="process-steps reveal reveal-delay-2">
-      <div class="process-connector"></div>
-      <div class="process-step">
-        <div class="ps-circle">◉</div>
-        <div class="ps-num">Step 01</div>
-        <div class="ps-title">Discovery</div>
-        <div class="ps-desc">Understanding your business goals, audience, and current online presence</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-circle">◎</div>
-        <div class="ps-num">Step 02</div>
-        <div class="ps-title">Strategy</div>
-        <div class="ps-desc">Building a customized content plan aligned with your growth objectives</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-circle">✦</div>
-        <div class="ps-num">Step 03</div>
-        <div class="ps-title">Creation</div>
-        <div class="ps-desc">Designing and writing compelling content approved by you before going live</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-circle">▲</div>
-        <div class="ps-num">Step 04</div>
-        <div class="ps-title">Optimization</div>
-        <div class="ps-desc">Tracking performance and refining the strategy based on real data</div>
-      </div>
-      <div class="process-step">
-        <div class="ps-circle">◈</div>
-        <div class="ps-num">Step 05</div>
-        <div class="ps-title">Growth</div>
-        <div class="ps-desc">Scaling your online presence consistently and sustainably month after month</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="testimonials" id="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <div class="eyebrow reveal">Client Love</div>
-      <h2 class="reveal reveal-delay-1">What Clients <em>Say</em></h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi-card reveal reveal-delay-1">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★ ★ ★ ★ ★</div>
-        <div class="testi-text">Cristine's strategy brought clarity and professionalism to our online presence. Within 60 days, we had a branded feed, consistent content, and people were actually finding us on Instagram and booking directly.</div>
-        <div class="testi-person">
-          <div class="testi-avatar">MT</div>
-          <div>
-            <div class="testi-name">Maria T.</div>
-            <div class="testi-role">Owner, Residential Cleaning · NYC</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card reveal reveal-delay-2">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★ ★ ★ ★ ★</div>
-        <div class="testi-text">Creative, reliable, and highly strategic. Cristine doesn't just post content — she builds systems. Our engagement tripled, our reach exploded, and we landed a $4,200/month commercial contract from Instagram.</div>
-        <div class="testi-person">
-          <div class="testi-avatar">JK</div>
-          <div>
-            <div class="testi-name">James K.</div>
-            <div class="testi-role">Director, ProShine Commercial · Chicago</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card reveal reveal-delay-3">
-        <div class="testi-quote">"</div>
-        <div class="testi-stars">★ ★ ★ ★ ★</div>
-        <div class="testi-text">I used to dread social media. Now it's our best marketing channel. Cristine handles everything, communicates proactively, and delivers content that actually represents our brand beautifully. Worth every cent.</div>
-        <div class="testi-person">
-          <div class="testi-avatar">AR</div>
-          <div>
-            <div class="testi-name">Ashley R.</div>
-            <div class="testi-role">Owner, Maid With Love · Dallas TX</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section" id="contact">
-  <div class="container">
-    <div class="eyebrow cta-eyebrow reveal">Ready to Grow?</div>
-    <h2 class="reveal reveal-delay-1">Let's Build a Social Presence<br>That Works <em>For Your Business.</em></h2>
-    <p class="reveal reveal-delay-2">If you're ready to create content that attracts, builds trust, and converts — let's connect. I currently have limited client spots available.</p>
-    <div class="cta-btns reveal reveal-delay-3">
-      <a href="#" class="btn-white">→ Book a Discovery Call</a>
-      <a href="#" class="btn-ghost-white">✉ Send a Message</a>
-    </div>
-    <div class="cta-contact-pills reveal reveal-delay-4">
-      <a href="mailto:hello@cristinecabugao.com" class="cta-pill">✉ hello@cristinecabugao.com</a>
-      <a href="#" class="cta-pill">◉ @cristine.smm</a>
-      <a href="#" class="cta-pill">in LinkedIn</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="footer-inner">
+    <!-- Hero stats -->
+    <div class="grid grid-cols-3 gap-8 md:gap-12 mt-16 pt-10 border-t border-white/10 max-w-2xl w-full animate-enter delay-400">
       <div>
-        <div class="footer-brand-name">Cristine <span>Cabugao</span></div>
-        <div class="footer-role">Social Media Manager · Content Strategist · Digital Marketing Specialist</div>
-        <div class="footer-bio">Helping service-based businesses build a stronger online presence through strategic content creation, social media management, and growth-focused digital marketing.</div>
+        <div class="font-display-xl text-4xl md:text-5xl gradient-text leading-none">50+</div>
+        <div class="font-label-caps text-label-caps text-on-surface-variant mt-2">Brands Elevated</div>
       </div>
       <div>
-        <div class="footer-col-title">Navigate</div>
-        <ul class="footer-links">
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-        </ul>
+        <div class="font-display-xl text-4xl md:text-5xl gradient-text leading-none">242%</div>
+        <div class="font-label-caps text-label-caps text-on-surface-variant mt-2">Avg. Growth</div>
       </div>
       <div>
-        <div class="footer-col-title">Connect</div>
-        <ul class="footer-links">
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Book a Call</a></li>
-        </ul>
+        <div class="font-display-xl text-4xl md:text-5xl gradient-text leading-none">100%</div>
+        <div class="font-label-caps text-label-caps text-on-surface-variant mt-2">Strategy-Driven</div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-copy">© 2026 Cristine Cabugao. All rights reserved. Built with strategy.</div>
-      <div class="footer-socials">
-        <a href="#" class="footer-social">IG</a>
-        <a href="#" class="footer-social">in</a>
-        <a href="#" class="footer-social">✉</a>
+  </div>
+</section>
+
+<!-- VALUE PROP -->
+<section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto relative" id="about">
+  <div class="text-center mb-stack-md reveal">
+    <h2 class="font-headline-lg text-4xl md:text-headline-lg text-on-surface mb-4">Strategy Meets Story</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Elevating service-based brands through immersive narratives and strategic visual fidelity.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 border border-secondary/30">
+        <span class="material-symbols-outlined text-secondary">movie</span>
+      </div>
+      <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-4">High-Impact Marketing</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Campaigns engineered to demand attention — strategic, conversion-focused content built around your real customer journey.</p>
+    </div>
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center mb-6 border border-tertiary/30">
+        <span class="material-symbols-outlined text-tertiary">auto_awesome</span>
+      </div>
+      <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-4">Visual Storytelling</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Every frame tells your brand's story — building emotional connections that turn passive scrollers into paying clients.</p>
+    </div>
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
+        <span class="material-symbols-outlined text-primary">trending_up</span>
+      </div>
+      <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-4">Brand Growth</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Visual identity translated into measurable business outcomes — bookings, retainers, and recurring revenue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED WORK -->
+<section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto" id="work">
+  <div class="flex justify-between items-end mb-stack-md reveal">
+    <div>
+      <h2 class="font-headline-lg text-4xl md:text-headline-lg text-on-surface mb-2">Featured Work</h2>
+      <p class="font-body-md text-body-md text-on-surface-variant">A curated selection of brands built, grown, and transformed.</p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+
+    <!-- FreshNest -->
+    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/freshnest/1.png');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">CLEANING</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">BRAND BUILD</span>
+        </div>
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">FreshNest Cleaning</h3>
+        <p class="font-body-md text-body-md text-white/80">Full brand build — logo, colour system, and a complete social content suite for a residential cleaning service.</p>
+        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">+272%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">FOLLOWERS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">6.2%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">9</div><div class="font-label-caps text-label-caps text-white/60 mt-1">BOOKINGS/MO</div></div>
+        </div>
       </div>
     </div>
+
+    <!-- Sparkle Clean -->
+    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/sparkle-clean/2.png');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">PREMIUM</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">POSITIONING</span>
+        </div>
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">Sparkle Clean Co.</h3>
+        <p class="font-body-md text-body-md text-white/80">Editorial, magazine-style content for a high-end exterior cleaning brand. Tips carousels &amp; social proof systems.</p>
+        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">340%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">PROFILE VISITS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">$4.2k</div><div class="font-label-caps text-label-caps text-white/60 mt-1">CONTRACT</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">4.8%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Real Estate (Synergy / SDI) -->
+    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
+      <div class="absolute inset-0 grid grid-cols-2 gap-[2px] transition-transform duration-700 group-hover:scale-105">
+        <div class="bg-cover bg-center" style="background-image: url('assets/real-estate/synergy.png');"></div>
+        <div class="bg-cover bg-center" style="background-image: url('assets/real-estate/sdi.png');"></div>
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">REAL ESTATE</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">RETAINER</span>
+        </div>
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">Synergy Estates &amp; SDI Group</h3>
+        <p class="font-body-md text-body-md text-white/80">Brand messaging, property marketing, and lead-magnet workbooks for two real estate investment groups — a $4,200/mo retainer.</p>
+        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">340%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">PROFILE VISITS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">$4.2k</div><div class="font-label-caps text-label-caps text-white/60 mt-1">RETAINER</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">4.8%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Maid With Love -->
+    <div class="group relative rounded-xl overflow-hidden aspect-[4/3] glass-card reveal">
+      <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('assets/maid-with-love/1.png');"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-background/95 via-background/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500"></div>
+      <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">CAMPAIGNS</span>
+          <span class="font-label-caps text-label-caps px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white">DIRECT RESPONSE</span>
+        </div>
+        <h3 class="font-headline-md text-2xl md:text-headline-md text-white mb-2">Maid With Love</h3>
+        <p class="font-body-md text-body-md text-white/80">Booking-first creative — direct-response carousels &amp; reels engineered for a warm local audience.</p>
+        <div class="flex gap-6 mt-4 pt-4 border-t border-white/10 text-white">
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">18.4k</div><div class="font-label-caps text-label-caps text-white/60 mt-1">REEL VIEWS</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">891</div><div class="font-label-caps text-label-caps text-white/60 mt-1">SAVES</div></div>
+          <div><div class="font-display-xl text-2xl text-tertiary leading-none">8.4%</div><div class="font-label-caps text-label-caps text-white/60 mt-1">ENGAGEMENT</div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto" id="services">
+  <div class="text-center mb-stack-md reveal">
+    <h2 class="font-headline-lg text-4xl md:text-headline-lg text-on-surface mb-4">My Expertise</h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Six focused services designed to build your brand, grow your audience, and convert followers into clients.</p>
+  </div>
+  <div class="flex flex-col gap-4 max-w-4xl mx-auto">
+
+    <div class="glass-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group reveal">
+      <div class="flex items-center gap-6">
+        <span class="font-display-xl text-5xl md:text-display-xl text-surface-variant group-hover:text-secondary/60 transition-colors duration-300">01</span>
+        <div>
+          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2 group-hover:text-secondary transition-colors">Social Media Management</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Strategic planning, consistent scheduling, platform growth, and daily engagement so your brand never goes quiet.</p>
+        </div>
+      </div>
+      <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+      </button>
+    </div>
+
+    <div class="glass-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group reveal">
+      <div class="flex items-center gap-6">
+        <span class="font-display-xl text-5xl md:text-display-xl text-surface-variant group-hover:text-tertiary/60 transition-colors duration-300">02</span>
+        <div>
+          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">Content Strategy</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Data-backed content planning around your ideal audience — what they want, when they want it, and how to make them act.</p>
+        </div>
+      </div>
+      <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+      </button>
+    </div>
+
+    <div class="glass-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group reveal">
+      <div class="flex items-center gap-6">
+        <span class="font-display-xl text-5xl md:text-display-xl text-surface-variant group-hover:text-primary/60 transition-colors duration-300">03</span>
+        <div>
+          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Graphic Design</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Branded, professional visuals that stop the scroll, build brand recognition, and communicate your value at a glance.</p>
+        </div>
+      </div>
+      <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+      </button>
+    </div>
+
+    <div class="glass-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group reveal">
+      <div class="flex items-center gap-6">
+        <span class="font-display-xl text-5xl md:text-display-xl text-surface-variant group-hover:text-secondary/60 transition-colors duration-300">04</span>
+        <div>
+          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2 group-hover:text-secondary transition-colors">Caption Writing</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Clear, strategic messaging that resonates with your audience, builds connection, and drives real action — not just likes.</p>
+        </div>
+      </div>
+      <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+      </button>
+    </div>
+
+    <div class="glass-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group reveal">
+      <div class="flex items-center gap-6">
+        <span class="font-display-xl text-5xl md:text-display-xl text-surface-variant group-hover:text-tertiary/60 transition-colors duration-300">05</span>
+        <div>
+          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2 group-hover:text-tertiary transition-colors">Brand Positioning</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Helping businesses communicate their value clearly so they're remembered, trusted, and chosen over competitors.</p>
+        </div>
+      </div>
+      <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+      </button>
+    </div>
+
+    <div class="glass-card rounded-xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 group reveal">
+      <div class="flex items-center gap-6">
+        <span class="font-display-xl text-5xl md:text-display-xl text-surface-variant group-hover:text-primary/60 transition-colors duration-300">06</span>
+        <div>
+          <h3 class="font-headline-md text-2xl md:text-headline-md text-on-surface mb-2 group-hover:text-primary transition-colors">Analytics &amp; Optimization</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">Monthly performance tracking, insight reporting, and ongoing strategy refinement so social media keeps improving.</p>
+        </div>
+      </div>
+      <button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform duration-300">arrow_outward</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto" id="testimonials">
+  <div class="text-center mb-stack-md reveal">
+    <h2 class="font-headline-lg text-4xl md:text-headline-lg text-on-surface mb-4">What Clients Say</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+    <div class="glass-card rounded-xl p-8 reveal">
+      <div class="text-secondary text-2xl mb-2 tracking-widest">★★★★★</div>
+      <p class="font-body-md text-body-md text-on-surface-variant italic mb-6">"Cristine's strategy brought clarity and professionalism to our online presence. Within 60 days, we had a branded feed, consistent content, and people were finding us on Instagram and booking directly."</p>
+      <div class="flex items-center gap-3 pt-6 border-t border-white/10">
+        <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center font-headline-md text-on-secondary-container font-bold">MT</div>
+        <div>
+          <div class="font-body-md text-body-md text-on-surface font-semibold">Maria T.</div>
+          <div class="font-label-caps text-label-caps text-on-surface-variant mt-1">RESIDENTIAL CLEANING · NYC</div>
+        </div>
+      </div>
+    </div>
+    <div class="glass-card rounded-xl p-8 reveal">
+      <div class="text-secondary text-2xl mb-2 tracking-widest">★★★★★</div>
+      <p class="font-body-md text-body-md text-on-surface-variant italic mb-6">"Creative, reliable, and highly strategic. Cristine doesn't just post content — she builds systems. Engagement tripled, reach exploded, and we landed a $4,200/month commercial contract from Instagram."</p>
+      <div class="flex items-center gap-3 pt-6 border-t border-white/10">
+        <div class="w-10 h-10 rounded-full bg-tertiary/30 flex items-center justify-center font-headline-md text-tertiary font-bold">JK</div>
+        <div>
+          <div class="font-body-md text-body-md text-on-surface font-semibold">James K.</div>
+          <div class="font-label-caps text-label-caps text-on-surface-variant mt-1">PROSHINE COMMERCIAL · CHICAGO</div>
+        </div>
+      </div>
+    </div>
+    <div class="glass-card rounded-xl p-8 reveal">
+      <div class="text-secondary text-2xl mb-2 tracking-widest">★★★★★</div>
+      <p class="font-body-md text-body-md text-on-surface-variant italic mb-6">"I used to dread social media. Now it's our best marketing channel. Cristine handles everything, communicates proactively, and delivers content that actually represents our brand beautifully. Worth every cent."</p>
+      <div class="flex items-center gap-3 pt-6 border-t border-white/10">
+        <div class="w-10 h-10 rounded-full bg-primary/30 flex items-center justify-center font-headline-md text-primary font-bold">AR</div>
+        <div>
+          <div class="font-body-md text-body-md text-on-surface font-semibold">Ashley R.</div>
+          <div class="font-label-caps text-label-caps text-on-surface-variant mt-1">MAID WITH LOVE · DALLAS TX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto relative overflow-hidden" id="contact">
+  <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-96 bg-secondary-container/20 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+  <div class="glass-card rounded-2xl p-8 md:p-16 text-center max-w-4xl mx-auto reveal">
+    <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">READY TO GROW?</span>
+    <h2 class="font-display-xl text-4xl md:text-display-xl text-on-surface mt-6 mb-6 leading-[1.05]">Let's Create.</h2>
+    <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">If you're ready to create content that attracts, builds trust, and converts — let's connect. Limited client spots available.</p>
+    <form class="max-w-2xl mx-auto text-left space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="space-y-2">
+          <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">NAME</label>
+          <input class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-4 font-body-md text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-colors backdrop-blur-md" placeholder="Your name" type="text"/>
+        </div>
+        <div class="space-y-2">
+          <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">EMAIL</label>
+          <input class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-4 font-body-md text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-colors backdrop-blur-md" placeholder="hello@example.com" type="email"/>
+        </div>
+      </div>
+      <div class="space-y-2">
+        <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">PROJECT DETAILS</label>
+        <textarea class="w-full bg-black/30 border border-white/10 rounded-lg px-4 py-4 font-body-md text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary transition-colors backdrop-blur-md" placeholder="Tell me about your brand and goals..." rows="4"></textarea>
+      </div>
+      <div class="pt-4 text-center">
+        <button class="btn-primary text-white font-label-caps text-label-caps px-12 py-4 rounded-full inline-flex items-center gap-2" type="button">
+          SUBMIT INQUIRY <span class="material-symbols-outlined text-[18px]">send</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest w-full py-stack-md mt-stack-xl border-t border-white/5 relative z-10">
+  <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-x gap-gutter w-full max-w-container-max mx-auto">
+    <span class="font-headline-md text-headline-md text-on-surface tracking-tighter">CRISTINE</span>
+    <div class="flex flex-wrap gap-6 justify-center">
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#about">About</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#work">Work</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#services">Services</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#contact">Contact</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">Instagram</a>
+      <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors opacity-80 hover:opacity-100" href="#">LinkedIn</a>
+    </div>
+    <span class="font-label-caps text-label-caps text-on-surface-variant">© 2026 CRISTINE CABUGAO</span>
   </div>
 </footer>
 
 <script>
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
+  // Reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-let menuOpen = false;
-function toggleMenu() {
-  menuOpen = !menuOpen;
-  document.getElementById('mobileMenu').classList.toggle('open', menuOpen);
-  document.body.style.overflow = menuOpen ? 'hidden' : '';
-}
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+  // Smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.length <= 1) return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        const offset = 90;
+        window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      }
+    });
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const href = a.getAttribute('href');
-    if (href.length <= 1) return;
-    const target = document.querySelector(href);
-    if (target) {
-      e.preventDefault();
-      const offset = 68;
-      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
-    }
-  });
-});
 </script>
 </body>
 </html>

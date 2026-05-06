@@ -349,6 +349,80 @@
   </div>
 </section>
 
+<!-- CHATBOT WIDGET -->
+<div id="chatbot-root" class="fixed bottom-6 right-6 z-[90]">
+  <button type="button" id="chatbot-toggle" aria-label="Open chat" class="btn-primary text-white w-16 h-16 rounded-full inline-flex items-center justify-center shadow-[0_0_24px_rgba(96,1,209,0.5)] relative">
+    <span class="material-symbols-outlined text-[28px]" id="chatbot-icon">chat</span>
+    <span class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-tertiary border-2 border-background animate-pulse"></span>
+  </button>
+  <div id="chatbot-panel" class="hidden absolute bottom-20 right-0 w-[min(360px,calc(100vw-3rem))] glass-card rounded-2xl flex flex-col overflow-hidden" style="height: 520px;">
+    <div class="bg-secondary-container/40 backdrop-blur-md border-b border-white/10 px-5 py-4 flex items-center gap-3">
+      <div class="relative">
+        <div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center">
+          <span class="material-symbols-outlined text-white text-[20px]">smart_toy</span>
+        </div>
+        <span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-tertiary border-2 border-background"></span>
+      </div>
+      <div class="flex-1">
+        <div class="font-headline-md text-base text-on-surface">Cristine's AI Assistant</div>
+        <div class="font-label-caps text-[10px] text-tertiary tracking-[0.15em]">ONLINE · REPLIES IN SECONDS</div>
+      </div>
+      <button type="button" id="chatbot-close" aria-label="Close chat" class="text-on-surface-variant hover:text-on-surface">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div id="chatbot-messages" class="flex-1 overflow-y-auto p-4 space-y-3"></div>
+    <div id="chatbot-quick" class="px-4 pb-2 flex flex-wrap gap-2"></div>
+    <form id="chatbot-form" class="border-t border-white/10 p-3 flex gap-2">
+      <input id="chatbot-input" type="text" placeholder="Type your question..." autocomplete="off" class="flex-1 bg-black/30 border border-white/10 rounded-lg px-4 py-3 font-body-md text-sm text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary"/>
+      <button type="submit" class="btn-primary text-white w-11 h-11 rounded-lg flex items-center justify-center">
+        <span class="material-symbols-outlined text-[20px]">send</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- LEAD CAPTURE POPUP -->
+<div id="lead-popup" class="fixed inset-0 z-[95] hidden items-center justify-center p-4 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true">
+  <button type="button" id="lead-close" aria-label="Close" class="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 rounded-full glass-card flex items-center justify-center text-on-surface hover:text-tertiary z-10">
+    <span class="material-symbols-outlined">close</span>
+  </button>
+  <div class="glass-card rounded-2xl p-8 md:p-12 max-w-lg w-full relative overflow-hidden">
+    <div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary-container/30 rounded-full blur-[80px] pointer-events-none"></div>
+    <div id="lead-form-state" class="relative">
+      <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">FREE · LIMITED SPOTS</span>
+      <h3 class="font-display-xl text-3xl md:text-4xl text-on-surface mt-4 mb-3 leading-[1.1]">Get a Free<br/><span class="gradient-text">Social Media Audit.</span></h3>
+      <p class="font-body-md text-body-md text-on-surface-variant mb-6">I'll review your last 30 posts and send back a 1-page strategy report with 3 specific things to fix this week — no charge, no pitch.</p>
+      <form id="lead-form" class="space-y-4">
+        <div>
+          <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">NAME</label>
+          <input required name="name" type="text" placeholder="Your name" class="w-full mt-2 bg-black/30 border border-white/10 rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary"/>
+        </div>
+        <div>
+          <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">EMAIL</label>
+          <input required name="email" type="email" placeholder="hello@example.com" class="w-full mt-2 bg-black/30 border border-white/10 rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary"/>
+        </div>
+        <div>
+          <label class="font-label-caps text-label-caps text-on-surface-variant ml-2">INSTAGRAM HANDLE</label>
+          <input required name="handle" type="text" placeholder="@yourbrand" class="w-full mt-2 bg-black/30 border border-white/10 rounded-lg px-4 py-3 font-body-md text-on-surface focus:outline-none focus:border-tertiary focus:ring-1 focus:ring-tertiary"/>
+        </div>
+        <button type="submit" class="btn-primary text-white font-label-caps text-label-caps w-full py-4 rounded-full inline-flex items-center justify-center gap-2 mt-2">
+          SEND ME THE AUDIT
+          <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+        </button>
+        <p class="font-label-caps text-[10px] text-on-surface-variant tracking-[0.15em] text-center pt-2">NO SPAM · UNSUBSCRIBE ANYTIME</p>
+      </form>
+    </div>
+    <div id="lead-success-state" class="hidden relative text-center py-6">
+      <div class="w-16 h-16 mx-auto rounded-full bg-tertiary/20 border border-tertiary/40 flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-tertiary text-[32px]">check</span>
+      </div>
+      <h3 class="font-display-xl text-3xl text-on-surface mb-3">You're In.</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant">Check your inbox in the next 24 hours — I'll send your audit personally.</p>
+    </div>
+  </div>
+</div>
+
 <!-- LIGHTBOX MODAL -->
 <div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center p-4 md:p-8 bg-black/85 backdrop-blur-md" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
   <button type="button" id="lightbox-close" aria-label="Close" class="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 rounded-full glass-card flex items-center justify-center text-on-surface hover:text-tertiary z-10">
@@ -449,6 +523,97 @@
       </button>
     </div>
 
+  </div>
+</section>
+
+<!-- AUTOMATION STACK -->
+<section class="px-6 md:px-margin-x py-stack-lg md:py-stack-xl w-full max-w-container-max mx-auto" id="automation">
+  <div class="text-center mb-stack-md reveal">
+    <span class="font-label-caps text-label-caps text-secondary tracking-[0.2em]">AUTOMATION STACK</span>
+    <h2 class="font-headline-lg text-4xl md:text-headline-lg text-on-surface mt-4 mb-4">Scale Without<br/><span class="gradient-text">Scaling Your Hours.</span></h2>
+    <p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto">Production-ready automations built into every retainer — your social presence runs whether you're online or not.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 border border-secondary/30">
+        <span class="material-symbols-outlined text-secondary">smart_toy</span>
+      </div>
+      <h3 class="font-headline-md text-2xl text-on-surface mb-3">AI Chatbots &amp; DM Bots</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant flex-1">Always-on conversation handlers that answer FAQs, qualify leads, and book discovery calls 24/7 — directly inside Instagram, Messenger, and WhatsApp.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">MANYCHAT</span>
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">META API</span>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center mb-6 border border-tertiary/30">
+        <span class="material-symbols-outlined text-tertiary">hub</span>
+      </div>
+      <h3 class="font-headline-md text-2xl text-on-surface mb-3">Lead Capture Funnels</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant flex-1">Multi-step funnels that turn comments and DMs into emails, then emails into bookings — with lead magnets, opt-in triggers, and CRM sync built in.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">FUNNELS</span>
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">CRM</span>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
+        <span class="material-symbols-outlined text-primary">forum</span>
+      </div>
+      <h3 class="font-headline-md text-2xl text-on-surface mb-3">Comment Automation</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant flex-1">Smart comment responders and keyword-trigger DM flows — every comment captured, every interested follower nudged into a conversation, none ignored.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">KEYWORD TRIGGERS</span>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-secondary-container/20 flex items-center justify-center mb-6 border border-secondary/30">
+        <span class="material-symbols-outlined text-secondary">bolt</span>
+      </div>
+      <h3 class="font-headline-md text-2xl text-on-surface mb-3">Auto-Responder Sequences</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant flex-1">Drip campaigns engineered to nurture cold leads from first touch to first booking — DM, email, and SMS sequences fully tracked and optimized monthly.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">DRIP</span>
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">EMAIL · SMS</span>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-tertiary/20 flex items-center justify-center mb-6 border border-tertiary/30">
+        <span class="material-symbols-outlined text-tertiary">schedule</span>
+      </div>
+      <h3 class="font-headline-md text-2xl text-on-surface mb-3">Smart Scheduling</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant flex-1">AI-optimized posting times tied to your audience's actual peak engagement windows — content calendar, queue, and approval flow auto-managed across platforms.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">METRICOOL</span>
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">LATER</span>
+      </div>
+    </div>
+
+    <div class="glass-card rounded-xl p-8 flex flex-col items-start reveal">
+      <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center mb-6 border border-primary/30">
+        <span class="material-symbols-outlined text-primary">graph_3</span>
+      </div>
+      <h3 class="font-headline-md text-2xl text-on-surface mb-3">Engagement Loops</h3>
+      <p class="font-body-md text-body-md text-on-surface-variant flex-1">Story polls, quizzes, and CTA loops engineered to compound reach week over week — every interaction feeds the next post's targeting and creative direction.</p>
+      <div class="mt-6 flex flex-wrap gap-2">
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">STORIES</span>
+        <span class="font-label-caps text-label-caps px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-on-surface-variant">REELS</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="mt-stack-md text-center reveal">
+    <button type="button" id="open-chatbot-cta" class="btn-primary text-white font-label-caps text-label-caps px-8 py-4 rounded-full inline-flex items-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">smart_toy</span>
+      TRY THE CHATBOT
+    </button>
+    <p class="font-body-md text-body-md text-on-surface-variant mt-4">Or click the chat bubble at the bottom of your screen.</p>
   </div>
 </section>
 
@@ -673,6 +838,213 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) closeCase();
   });
+
+  // ======================================================
+  // CHATBOT WIDGET
+  // ======================================================
+  const cbToggle  = document.getElementById('chatbot-toggle');
+  const cbIcon    = document.getElementById('chatbot-icon');
+  const cbPanel   = document.getElementById('chatbot-panel');
+  const cbClose   = document.getElementById('chatbot-close');
+  const cbMsgs    = document.getElementById('chatbot-messages');
+  const cbQuick   = document.getElementById('chatbot-quick');
+  const cbForm    = document.getElementById('chatbot-form');
+  const cbInput   = document.getElementById('chatbot-input');
+  const cbCtaBtn  = document.getElementById('open-chatbot-cta');
+
+  const intents = {
+    services: {
+      label: 'Services',
+      reply: "I offer 6 core services: Social Media Management, Content Strategy, Graphic Design, Caption Writing, Brand Positioning, and Analytics & Optimization. Plus a full automation stack — chatbots, lead funnels, comment automation, and more. Which one interests you most?"
+    },
+    pricing: {
+      label: 'Pricing',
+      reply: "Retainers start at $1.5k/mo for full social management (1 platform) and scale up based on platforms, content volume, and automation depth. I'd recommend booking a free audit first — I'll quote you something specific based on your actual goals."
+    },
+    automations: {
+      label: 'Automations',
+      reply: "I build chatbots, DM auto-responders, lead-capture funnels, comment-triggered DMs, drip sequences, and engagement loops. Most clients see 3-5x lead volume within 60 days of switching automations on. Want me to walk through your current setup?"
+    },
+    audit: {
+      label: 'Free audit',
+      reply: "Love it. I'll review your last 30 posts and send a 1-page strategy report — free, no pitch. Click the button below to fill in your details.",
+      action: 'open-lead'
+    },
+    work: {
+      label: 'See work',
+      reply: "Scroll up to the Featured Work section — there are 4 case studies (FreshNest, Sparkle Clean, Synergy/SDI Real Estate, Maid With Love). Click any tile to see the full gallery.",
+      action: 'scroll-work'
+    },
+    book: {
+      label: 'Book a call',
+      reply: "Easiest way: scroll to the bottom and use the inquiry form, or grab a free audit first and I'll book you in directly from there.",
+      action: 'scroll-contact'
+    }
+  };
+
+  // Keyword routing for free-text input
+  function routeMessage(text) {
+    const t = text.toLowerCase();
+    if (/price|pricing|cost|rate|how much|fee|budget/.test(t)) return 'pricing';
+    if (/audit|review|free|checklist/.test(t)) return 'audit';
+    if (/book|call|schedule|meet|consult/.test(t)) return 'book';
+    if (/work|portfolio|case|sample|example|previous/.test(t)) return 'work';
+    if (/automation|chatbot|bot|funnel|dm|comment|sequence/.test(t)) return 'automations';
+    if (/service|offer|do you|provide|what.*you/.test(t)) return 'services';
+    return null;
+  }
+
+  function appendMsg(html, who) {
+    const wrap = document.createElement('div');
+    wrap.className = who === 'bot'
+      ? 'flex items-start gap-2'
+      : 'flex items-start gap-2 justify-end';
+    if (who === 'bot') {
+      wrap.innerHTML = `
+        <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-white text-[14px]">smart_toy</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl rounded-tl-sm px-4 py-2.5 text-on-surface text-sm leading-snug max-w-[80%]">${html}</div>`;
+    } else {
+      wrap.innerHTML = `
+        <div class="bg-secondary-container/60 border border-secondary/40 rounded-2xl rounded-tr-sm px-4 py-2.5 text-white text-sm leading-snug max-w-[80%]">${html}</div>`;
+    }
+    cbMsgs.appendChild(wrap);
+    cbMsgs.scrollTop = cbMsgs.scrollHeight;
+  }
+  function appendTyping() {
+    const wrap = document.createElement('div');
+    wrap.id = 'cb-typing';
+    wrap.className = 'flex items-start gap-2';
+    wrap.innerHTML = `
+      <div class="w-7 h-7 rounded-full bg-secondary-container flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-white text-[14px]">smart_toy</span>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl rounded-tl-sm px-4 py-3 inline-flex gap-1">
+        <span class="w-1.5 h-1.5 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay:0ms"></span>
+        <span class="w-1.5 h-1.5 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay:150ms"></span>
+        <span class="w-1.5 h-1.5 bg-on-surface-variant rounded-full animate-bounce" style="animation-delay:300ms"></span>
+      </div>`;
+    cbMsgs.appendChild(wrap);
+    cbMsgs.scrollTop = cbMsgs.scrollHeight;
+  }
+  function removeTyping() {
+    const t = document.getElementById('cb-typing');
+    if (t) t.remove();
+  }
+  function renderQuickReplies() {
+    cbQuick.innerHTML = Object.keys(intents).map(k =>
+      `<button type="button" data-intent="${k}" class="font-label-caps text-[10px] tracking-[0.15em] px-3 py-2 rounded-full bg-white/5 border border-white/10 text-on-surface-variant hover:text-on-surface hover:bg-white/10 transition-colors">${intents[k].label.toUpperCase()}</button>`
+    ).join('');
+    cbQuick.querySelectorAll('button').forEach(b => {
+      b.addEventListener('click', () => handleIntent(b.dataset.intent, intents[b.dataset.intent].label));
+    });
+  }
+  function handleIntent(key, userText) {
+    const intent = intents[key];
+    if (!intent) {
+      appendMsg("Hmm, I didn't quite catch that. Try one of the quick replies, or ask about <em>services</em>, <em>pricing</em>, <em>automations</em>, or a <em>free audit</em>.", 'bot');
+      return;
+    }
+    appendMsg(userText, 'user');
+    appendTyping();
+    setTimeout(() => {
+      removeTyping();
+      appendMsg(intent.reply, 'bot');
+      if (intent.action === 'open-lead') {
+        setTimeout(openLead, 600);
+      } else if (intent.action === 'scroll-work') {
+        setTimeout(() => closeChat() || document.getElementById('work').scrollIntoView({ behavior: 'smooth' }), 600);
+      } else if (intent.action === 'scroll-contact') {
+        setTimeout(() => closeChat() || document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }), 600);
+      }
+    }, 700);
+  }
+
+  let cbInited = false;
+  function initChat() {
+    if (cbInited) return;
+    cbInited = true;
+    appendMsg("Hi! I'm Cristine's AI assistant 👋 I can answer questions about her services, automations, pricing, or book you a free social media audit. What can I help with?", 'bot');
+    renderQuickReplies();
+  }
+  function openChat() {
+    cbPanel.classList.remove('hidden');
+    cbIcon.textContent = 'close';
+    initChat();
+  }
+  function closeChat() {
+    cbPanel.classList.add('hidden');
+    cbIcon.textContent = 'chat';
+    return true;
+  }
+  function toggleChat() {
+    if (cbPanel.classList.contains('hidden')) openChat(); else closeChat();
+  }
+  cbToggle.addEventListener('click', toggleChat);
+  cbClose.addEventListener('click', closeChat);
+  if (cbCtaBtn) cbCtaBtn.addEventListener('click', () => { openChat(); cbToggle.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); });
+  cbForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const text = cbInput.value.trim();
+    if (!text) return;
+    cbInput.value = '';
+    const key = routeMessage(text);
+    if (key) {
+      handleIntent(key, text);
+    } else {
+      appendMsg(text, 'user');
+      appendTyping();
+      setTimeout(() => {
+        removeTyping();
+        appendMsg("Great question — for something specific like that, I'd want Cristine to answer directly. Drop your email in the audit form and she'll reply within 24 hours.", 'bot');
+      }, 700);
+    }
+  });
+
+  // ======================================================
+  // LEAD CAPTURE POPUP
+  // ======================================================
+  const lead       = document.getElementById('lead-popup');
+  const leadClose  = document.getElementById('lead-close');
+  const leadForm   = document.getElementById('lead-form');
+  const leadFormSt = document.getElementById('lead-form-state');
+  const leadOk     = document.getElementById('lead-success-state');
+
+  function openLead() {
+    lead.classList.remove('hidden');
+    lead.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+    sessionStorage.setItem('lead-shown', '1');
+  }
+  function closeLead() {
+    lead.classList.add('hidden');
+    lead.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+  leadClose.addEventListener('click', closeLead);
+  lead.addEventListener('click', e => { if (e.target === lead) closeLead(); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !lead.classList.contains('hidden')) closeLead();
+  });
+  leadForm.addEventListener('submit', e => {
+    e.preventDefault();
+    // No backend wired yet — show success state. Replace with fetch('/lead', ...) when ready.
+    leadFormSt.classList.add('hidden');
+    leadOk.classList.remove('hidden');
+    setTimeout(closeLead, 4000);
+  });
+
+  // Scroll-trigger: open lead popup once per session at 50% scroll depth
+  let leadTriggered = sessionStorage.getItem('lead-shown') === '1';
+  window.addEventListener('scroll', () => {
+    if (leadTriggered) return;
+    const pct = (window.scrollY + window.innerHeight) / document.body.scrollHeight;
+    if (pct > 0.55) {
+      leadTriggered = true;
+      openLead();
+    }
+  }, { passive: true });
 </script>
 </body>
 </html>

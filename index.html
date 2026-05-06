@@ -556,7 +556,7 @@ section { position: relative; z-index: 1; }
 
 /* PORTFOLIO */
 .portfolio { padding: 120px 0; background: var(--bg3); }
-.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
 .port-card {
   background: var(--card);
   border-radius: 24px;
@@ -570,7 +570,7 @@ section { position: relative; z-index: 1; }
 .port-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-l); }
 
 .port-visual {
-  height: 240px;
+  height: 280px;
   position: relative;
   overflow: hidden;
 }
@@ -583,6 +583,19 @@ section { position: relative; z-index: 1; }
   transition: transform 0.6s ease;
 }
 .port-card:hover .port-hero { transform: scale(1.04); }
+.port-visual-split {
+  display: flex;
+  gap: 2px;
+  background: var(--white);
+}
+.port-hero-half {
+  flex: 1;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.port-card:hover .port-hero-half { transform: scale(1.04); }
 .port-thumbs {
   position: absolute;
   bottom: 12px;
@@ -816,7 +829,6 @@ footer { background: var(--card); padding: 64px 0 40px; border-top: 1px solid va
   .about-inner { grid-template-columns: 1fr; gap: 60px; }
   .why-inner { grid-template-columns: 1fr; gap: 60px; }
   .services-grid { grid-template-columns: repeat(2,1fr); }
-  .portfolio-grid { grid-template-columns: repeat(2,1fr); }
   .testi-grid { grid-template-columns: repeat(2,1fr); }
   .process-steps { grid-template-columns: repeat(3,1fr); gap: 24px; }
   .process-connector { display: none; }
@@ -1204,6 +1216,32 @@ footer { background: var(--card); padding: 64px 0 40px; border-top: 1px solid va
       </div>
 
       <div class="port-card reveal reveal-delay-3">
+        <div class="port-visual port-visual-split">
+          <img class="port-hero-half" src="assets/real-estate/synergy.png" alt="Synergy Data Investments / SDI Group">
+          <img class="port-hero-half" src="assets/real-estate/sdi.png" alt="SDI Group">
+        </div>
+        <div class="port-info">
+          <span class="port-tag">Real Estate</span>
+          <div class="port-title">Synergy Estates &amp; SDI Group</div>
+          <div class="port-desc">Brand messaging, property marketing, and full-spectrum content systems for two real estate investment groups — quarterly reports, property valuations, and lead-magnet workbooks that landed a $4,200/mo retainer.</div>
+          <div class="port-metrics">
+            <div>
+              <span class="port-metric-val">340%</span>
+              <div class="port-metric-label">Profile Visits</div>
+            </div>
+            <div>
+              <span class="port-metric-val">$4.2k</span>
+              <div class="port-metric-label">Monthly Retainer</div>
+            </div>
+            <div>
+              <span class="port-metric-val">4.8%</span>
+              <div class="port-metric-label">Engagement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="port-card reveal reveal-delay-4">
         <div class="port-visual">
           <img class="port-hero" src="assets/maid-with-love/1.png" alt="Maid With Love hero">
           <div class="port-thumbs">

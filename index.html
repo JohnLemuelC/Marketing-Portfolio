@@ -1063,64 +1063,80 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !lead.classList.contains('hidden')) closeLead();
   });
-  // Cristine's inbox — update this one constant when the real address is live.
-  const CRISTINE_EMAIL = 'hello@cristinecabugao.com';
+  // Both forms POST to /api/lead which appends a row to Cristine's
+  // "Marketing Leads" Google Sheet.
+  async function submitLead(payload) {
+    const res = await fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (!res.ok) {
+      const detail = await res.json().catch(() => ({}));
+      throw new Error(detail.error || `HTTP ${res.status}`);
+    }
+    return res.json();
+  }
 
-  leadForm.addEventListener('submit', e => {
+  // Audit popup
+  leadForm.addEventListener('submit', async e => {
     e.preventDefault();
-    const fd     = new FormData(leadForm);
-    const name   = (fd.get('name')   || '').toString().trim();
-    const email  = (fd.get('email')  || '').toString().trim();
-    const handle = (fd.get('handle') || '').toString().trim();
+    const submitBtn = leadForm.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'SENDING…';
 
-    const subject = `Free Social Media Audit Request — ${name || 'New lead'}`;
-    const body = [
-      `Hi Cristine,`,
-      ``,
-      `I'd love a free social media audit. Here are my details:`,
-      ``,
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Instagram handle: ${handle}`,
-      ``,
-      `Looking forward to your report!`,
-      ``,
-      `— ${name}`
-    ].join('\n');
-
-    const mailto = `mailto:${CRISTINE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
-
-    leadFormSt.classList.add('hidden');
-    leadOk.classList.remove('hidden');
-    setTimeout(closeLead, 4000);
+    const fd = new FormData(leadForm);
+    try {
+      await submitLead({
+        source: 'audit-popup',
+        name:   (fd.get('name')   || '').toString().trim(),
+        email:  (fd.get('email')  || '').toString().trim(),
+        handle: (fd.get('handle') || '').toString().trim()
+      });
+      leadFormSt.classList.add('hidden');
+      leadOk.classList.remove('hidden');
+      setTimeout(closeLead, 4000);
+    } catch (err) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalLabel;
+      alert("Couldn't send your request — please try again or DM @cristine.smm directly.");
+      console.error('Lead submit failed:', err);
+    }
   });
 
-  // Contact form at #contact — same mailto pattern, longer subject line
+  // Contact form at #contact
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', e => {
+    contactForm.addEventListener('submit', async e => {
       e.preventDefault();
-      const fd      = new FormData(contactForm);
-      const name    = (fd.get('name')    || '').toString().trim();
-      const email   = (fd.get('email')   || '').toString().trim();
-      const details = (fd.get('details') || '').toString().trim();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = 'SENDING…';
 
-      const subject = `Inquiry from ${name || 'a new client'} — Cristine Cabugao Portfolio`;
-      const body = [
-        `Hi Cristine,`,
-        ``,
-        `Name: ${name}`,
-        `Email: ${email}`,
-        ``,
-        `Project details:`,
-        details,
-        ``,
-        `— ${name}`
-      ].join('\n');
-
-      const mailto = `mailto:${CRISTINE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
+      const fd = new FormData(contactForm);
+      try {
+        await submitLead({
+          source:  'contact-form',
+          name:    (fd.get('name')    || '').toString().trim(),
+          email:   (fd.get('email')   || '').toString().trim(),
+          details: (fd.get('details') || '').toString().trim()
+        });
+        contactForm.innerHTML = `
+          <div class="text-center py-8">
+            <div class="w-16 h-16 mx-auto rounded-full bg-sand/40 border border-wine/30 flex items-center justify-center mb-4">
+              <span class="material-symbols-outlined text-wine text-[32px]">check</span>
+            </div>
+            <h3 class="font-title text-3xl text-wine mb-2">Thanks!</h3>
+            <p class="font-body text-body-md text-wine/80">Your message is in. I'll reply within 24 hours.</p>
+          </div>`;
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+        alert("Couldn't send your message — please try again in a moment.");
+        console.error('Contact submit failed:', err);
+      }
     });
   }
 

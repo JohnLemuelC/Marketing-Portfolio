@@ -990,9 +990,9 @@
       if (intent.action === 'open-lead') {
         setTimeout(openLead, 600);
       } else if (intent.action === 'scroll-work') {
-        setTimeout(() => closeChat() || document.getElementById('work').scrollIntoView({ behavior: 'smooth' }), 600);
+        setTimeout(() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' }), 600);
       } else if (intent.action === 'scroll-contact') {
-        setTimeout(() => closeChat() || document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }), 600);
+        setTimeout(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }), 600);
       }
     }, 700);
   }

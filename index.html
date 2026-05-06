@@ -702,23 +702,23 @@
     <span class="font-subtitle text-label-caps text-wine tracking-[0.2em]">READY TO GROW?</span>
     <h2 class="font-title text-4xl md:text-display-xl text-wine mt-6 mb-6 leading-[1.05]">Let's <span class="script-accent text-5xl md:text-7xl italic">Create.</span></h2>
     <p class="font-body text-body-lg text-wine/80 mb-12 max-w-xl mx-auto">If you're ready to create content that attracts, builds trust, and converts — let's connect. Limited client spots available.</p>
-    <form class="max-w-2xl mx-auto text-left space-y-6">
+    <form id="contact-form" class="max-w-2xl mx-auto text-left space-y-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="space-y-2">
           <label class="font-subtitle text-label-caps text-muted ml-2">NAME</label>
-          <input class="w-full bg-white border border-wine/20 rounded-lg px-4 py-4 font-body text-wine focus:outline-none focus:border-wine focus:ring-1 focus:ring-wine transition-colors" placeholder="Your name" type="text"/>
+          <input required name="name" class="w-full bg-white border border-wine/20 rounded-lg px-4 py-4 font-body text-wine focus:outline-none focus:border-wine focus:ring-1 focus:ring-wine transition-colors" placeholder="Your name" type="text"/>
         </div>
         <div class="space-y-2">
           <label class="font-subtitle text-label-caps text-muted ml-2">EMAIL</label>
-          <input class="w-full bg-white border border-wine/20 rounded-lg px-4 py-4 font-body text-wine focus:outline-none focus:border-wine focus:ring-1 focus:ring-wine transition-colors" placeholder="hello@example.com" type="email"/>
+          <input required name="email" class="w-full bg-white border border-wine/20 rounded-lg px-4 py-4 font-body text-wine focus:outline-none focus:border-wine focus:ring-1 focus:ring-wine transition-colors" placeholder="hello@example.com" type="email"/>
         </div>
       </div>
       <div class="space-y-2">
         <label class="font-subtitle text-label-caps text-muted ml-2">PROJECT DETAILS</label>
-        <textarea class="w-full bg-white border border-wine/20 rounded-lg px-4 py-4 font-body text-wine focus:outline-none focus:border-wine focus:ring-1 focus:ring-wine transition-colors" placeholder="Tell me about your brand and goals..." rows="4"></textarea>
+        <textarea required name="details" class="w-full bg-white border border-wine/20 rounded-lg px-4 py-4 font-body text-wine focus:outline-none focus:border-wine focus:ring-1 focus:ring-wine transition-colors" placeholder="Tell me about your brand and goals..." rows="4"></textarea>
       </div>
       <div class="pt-4 text-center">
-        <button class="btn-primary text-white font-subtitle text-label-caps px-12 py-4 rounded-full inline-flex items-center gap-2" type="button">
+        <button class="btn-primary text-white font-subtitle text-label-caps px-12 py-4 rounded-full inline-flex items-center gap-2" type="submit">
           SUBMIT INQUIRY <span class="material-symbols-outlined text-[18px]">send</span>
         </button>
       </div>
@@ -1063,13 +1063,66 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && !lead.classList.contains('hidden')) closeLead();
   });
+  // Cristine's inbox — update this one constant when the real address is live.
+  const CRISTINE_EMAIL = 'hello@cristinecabugao.com';
+
   leadForm.addEventListener('submit', e => {
     e.preventDefault();
-    // No backend wired yet — show success state. Replace with fetch('/lead', ...) when ready.
+    const fd     = new FormData(leadForm);
+    const name   = (fd.get('name')   || '').toString().trim();
+    const email  = (fd.get('email')  || '').toString().trim();
+    const handle = (fd.get('handle') || '').toString().trim();
+
+    const subject = `Free Social Media Audit Request — ${name || 'New lead'}`;
+    const body = [
+      `Hi Cristine,`,
+      ``,
+      `I'd love a free social media audit. Here are my details:`,
+      ``,
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Instagram handle: ${handle}`,
+      ``,
+      `Looking forward to your report!`,
+      ``,
+      `— ${name}`
+    ].join('\n');
+
+    const mailto = `mailto:${CRISTINE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
     leadFormSt.classList.add('hidden');
     leadOk.classList.remove('hidden');
     setTimeout(closeLead, 4000);
   });
+
+  // Contact form at #contact — same mailto pattern, longer subject line
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const fd      = new FormData(contactForm);
+      const name    = (fd.get('name')    || '').toString().trim();
+      const email   = (fd.get('email')   || '').toString().trim();
+      const details = (fd.get('details') || '').toString().trim();
+
+      const subject = `Inquiry from ${name || 'a new client'} — Cristine Cabugao Portfolio`;
+      const body = [
+        `Hi Cristine,`,
+        ``,
+        `Name: ${name}`,
+        `Email: ${email}`,
+        ``,
+        `Project details:`,
+        details,
+        ``,
+        `— ${name}`
+      ].join('\n');
+
+      const mailto = `mailto:${CRISTINE_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
 
   // Scroll-trigger: open lead popup once per session at 50% scroll depth
   let leadTriggered = sessionStorage.getItem('lead-shown') === '1';
